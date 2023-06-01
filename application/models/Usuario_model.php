@@ -9,6 +9,7 @@ class Usuario_model extends MY_Model {
 		{
 			$this->db->where('email', $email);
 			$this->db->where('senha', $senha);
+			$this->db->where('status', 1);
 
 			return $this->db->get($tabela)->row_array();
 		}

@@ -30,6 +30,7 @@ class Login extends CI_Controller {
 			$dados = array(
 				'logado' => TRUE,
 				'id' => $dadosLogin['id'],
+				'role' => $dadosLogin['role'],
 			);
 
 			$this->session->set_userdata($dados);
