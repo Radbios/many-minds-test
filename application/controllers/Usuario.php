@@ -20,7 +20,7 @@ class Usuario extends CI_Controller {
 	public function isAdmin()
 	{
 		if ($this->session->userdata('role') != USER_ADMIN) {
-			redirect('forbidden');
+			redirect('erro/forbidden');
 		}
 	}
 

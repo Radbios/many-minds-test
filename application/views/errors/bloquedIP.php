@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url('assets/css/forbidden.css') ?>">
-    <title>Forbidden access</title>
+    <title>Bloqued IP</title>
 </head>
 <body>
     <div class="text">
         <div class="text-title">
-            Acesso proibido
+            IP bloqueado
         </div>
         
         <div class="info">
-            Usuário não permitido
+            Tente novamente após <?= $tempo ?> segundos.
+        </div>
+
+        <div class="obs">
+            (MOTIVO: você errou a senha 3 vezes)
         </div>
     </div>
 </body>

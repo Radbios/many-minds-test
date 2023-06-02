@@ -9,17 +9,48 @@ class Auth extends CI_Controller {
 		$this->load->model('Usuario_model', 'Usuario');
 	}
 
+	public function checkAttempt(){
+		$tentativasLogin = $this->session->userdata('tentativas_login') ?? 0;
+
+		$this->session->set_userdata('tentativas_login', $tentativasLogin + 1);
+
+		if ($tentativasLogin >= 3) {
+
+			$TempoBloqueio = time() + 60;
+			$this->session->set_userdata('tempo_bloqueio', $TempoBloqueio);
+		}
+
+        if ($tentativasLogin >= 3) {
+            $tempoBloqueio = $this->session->userdata('tempo_bloqueio') ?? 0;
+
+            if (time() < $tempoBloqueio) {
+                $tempoRestante = $tempoBloqueio - time();
+				redirect('erro/bloquedIP/' . $tempoRestante);
+            } else {
+                $this->session->unset_userdata('tentativas_login');
+                $this->session->unset_userdata('tempo_bloqueio');
+            }
+        }
+	}
+
+	public function unsetAttemptData(){
+		$this->session->unset_userdata('tentativas_login');
+		$this->session->unset_userdata('tempo_bloqueio');
+	}
+
 
 	public function index()
 	{
 		$dados['titulo'] = "Login";
+
 		$this->load->view('login', $dados);
 	}
 
 
 	public function logar()
 	{
-		/*Pegar os dados do form*/
+		$this->checkAttempt();
+
         $email = $this->input->post('email');
 		$senha = md5($this->input->post('password'));
 		$tabela = 'usuarios';
@@ -33,6 +64,8 @@ class Auth extends CI_Controller {
 				'id' => $dadosLogin['id'],
 				'role' => $dadosLogin['role'],
 			);
+			
+			this.unsetAttemptData();
 
 			$this->session->set_userdata($dados);
 			redirect('dashboard');
