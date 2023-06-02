@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Curso extends CI_Controller {
 
 	public function sessionCheck()
 	{
@@ -9,15 +9,10 @@ class Dashboard extends CI_Controller {
 			redirect('auth');
 		}
 	}
-
+	
 	public function index()
 	{
-		//verifica se o usuário está logado
-		$this->sessionCheck();
-
-		$dados['titulo'] = "Página principal";
-
-		$this->load->view('layout/header', $dados);
+		$this->load->view('layout/header');
 		$this->load->view('layout/navbar');
 		$this->load->view('layout/footer');
 	}

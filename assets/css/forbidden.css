@@ -1,0 +1,20 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(212, 204, 204);
+}
+
+#text{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    font-size: 36px;
+    cursor: default;
+}

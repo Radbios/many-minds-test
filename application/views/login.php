@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Login - page</title>
+    <title><?= $titulo ?></title>
 
 
     <!-- Custom styles for this template -->
@@ -13,7 +13,7 @@
 
   <body>
     <div id="login-page">
-        <form class="form-login" action="<?= base_url('login/logar') ?>" method="post">
+        <form class="form-login" action="<?= base_url('auth/logar') ?>" method="post">
             <div id="logo-login">
                 <img src="<?= base_url('assets/img/login/logo-alagoas.png') ?>" alt="" width="20%">
             </div>

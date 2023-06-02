@@ -6,7 +6,7 @@ class Base extends CI_Controller {
 	public function sessionCheck()
 	{
 		if ($this->session->userdata('logado') == false) {
-			redirect('login');
+			redirect('auth');
 		}
 	}
 	

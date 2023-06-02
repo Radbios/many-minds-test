@@ -14,6 +14,10 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 
-INSERT INTO `usuarios` VALUES (1,'José Fabiano','admin@gmail.com','21232f297a57a5a743894a0e4a801fc3', 1, 'admin');
+-- SENHA : ADMIN
+INSERT INTO `usuarios` VALUES (1,'Admin','admin@gmail.com','21232f297a57a5a743894a0e4a801fc3', 1, 'admin');
+
+-- SENHA : STUDENT
+INSERT INTO `usuarios` VALUES (1,'Student','student@gmail.com','cd73502828457d15655bbd7a63fb0bc8', 1, 'student');
 
 UNLOCK TABLES;

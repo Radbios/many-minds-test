@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid"> 
     <a class="navbar-brand" href="#">LOGO</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,7 @@
                 <a class="nav-link" href="#">Disciplinas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Usuários</a>
+                <a class="nav-link" href="<?= base_url('usuario')?>">Usuários</a>
             </li>
           </ul>
           <div class="dropdown" id="user-dropdown">
@@ -27,7 +27,7 @@
                 <li><a class="dropdown-item" href="#">Perfil</a></li>
                 <li><a class="dropdown-item" href="#">Configurações</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="<?= base_url('login/logout')?>">Sair</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('auth/logout')?>">Sair</a></li>
             </ul>
           </div>
       </div>

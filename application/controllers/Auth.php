@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Auth extends CI_Controller {
 
 	function __construct()
 	{
@@ -12,7 +12,8 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('login');
+		$dados['titulo'] = "Login";
+		$this->load->view('login', $dados);
 	}
 
 
@@ -34,11 +35,11 @@ class Login extends CI_Controller {
 			);
 
 			$this->session->set_userdata($dados);
-			redirect('base');
+			redirect('dashboard');
 		} else
 		{
 			$this->session->set_flashdata('error', 'Usuário ou senha inválidos!');
-			redirect('login');
+			redirect('auth');
 		}
 	}
 
@@ -47,6 +48,6 @@ class Login extends CI_Controller {
 	{
 		$this->session->unset_userdata('logado');
 		/*$this->session->sess_destroy();*/
-		redirect('login');
+		redirect('auth');
 	}
 }
