@@ -14,7 +14,7 @@
         </div>
         
         <div class="info">
-            Tente novamente após <?= $tempo ?> segundos.
+            Tente novamente após 60 segundos.
         </div>
 
         <div class="obs">

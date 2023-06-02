@@ -8,9 +8,8 @@ class Erro extends CI_Controller {
 		$this->load->view('errors/forbidden');
 	}
 
-	public function bloquedIP($tempo)
+	public function bloquedIP()
 	{
-		$dados['tempo'] = $tempo;
-		$this->load->view('errors/bloquedIP', $dados);
+		$this->load->view('errors/bloquedIP');
 	}
 }

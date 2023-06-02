@@ -9,25 +9,16 @@ class Auth extends CI_Controller {
 		$this->load->model('Usuario_model', 'Usuario');
 	}
 
-	public function checkAttempt(){
-		$tentativasLogin = $this->session->userdata('tentativas_login') ?? 0;
-
-		$this->session->set_userdata('tentativas_login', $tentativasLogin + 1);
-
-		if ($tentativasLogin >= 3) {
-
-			$TempoBloqueio = time() + 60;
-			$this->session->set_userdata('tempo_bloqueio', $TempoBloqueio);
-		}
-
+	public function checkAttempt($tentativasLogin){
+		
         if ($tentativasLogin >= 3) {
-            $tempoBloqueio = $this->session->userdata('tempo_bloqueio') ?? 0;
-
+			$tempoBloqueio = $this->session->userdata('tempo_bloqueio') ?? 0;
+			
             if (time() < $tempoBloqueio) {
-                $tempoRestante = $tempoBloqueio - time();
-				redirect('erro/bloquedIP/' . $tempoRestante);
+				redirect('erro/bloquedIP');
+
             } else {
-                $this->session->unset_userdata('tentativas_login');
+				$this->session->unset_userdata('tentativas_login');
                 $this->session->unset_userdata('tempo_bloqueio');
             }
         }
@@ -49,7 +40,9 @@ class Auth extends CI_Controller {
 
 	public function logar()
 	{
-		$this->checkAttempt();
+		$tentativasLogin = $this->session->userdata('tentativas_login') ?? 0;
+
+		$this->checkAttempt($tentativasLogin);
 
         $email = $this->input->post('email');
 		$senha = md5($this->input->post('password'));
@@ -65,12 +58,20 @@ class Auth extends CI_Controller {
 				'role' => $dadosLogin['role'],
 			);
 			
-			this.unsetAttemptData();
+			$this->unsetAttemptData();
 
 			$this->session->set_userdata($dados);
 			redirect('dashboard');
 		} else
 		{
+			$this->session->set_userdata('tentativas_login', $tentativasLogin + 1);
+
+			if ($tentativasLogin + 1 >= 3) {
+	
+				$TempoBloqueio = time() + 60;
+				$this->session->set_userdata('tempo_bloqueio', $TempoBloqueio);
+			}
+
 			$this->session->set_flashdata('error', 'Usuário ou senha inválidos!');
 			redirect('auth');
 		}
