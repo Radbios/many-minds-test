@@ -54,3 +54,6 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['ws/registros'] = 'WebService/registros';
+$route['usuario/mudarStatus/(:user_id)/(:status)'] = 'usuario/mudarStatus/$l/$i';
+$route['usuario/pegarInfo/(:user_id)'] = 'usuario/pegarInfo/$l';
+$route['usuario/atualizarInfo/(:user_id)'] = 'usuario/atualizarInfo/$l';

@@ -1,0 +1,226 @@
+:root{
+    --bs-navbar-active-color: red;
+    --bs-emphasis-color-rgb: white;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 0.07fr 1fr;
+    grid-template-areas: 
+        "nav" "contentPage";
+}
+
+.navbar{
+    grid-area: nav;
+    background-color: black;
+    color: white;
+}
+.nav-link:hover{
+    transition: color 0.7s;
+    color: rgb(184, 158, 158);
+}
+
+.dropdown-item:hover{
+    transition: background 0.8s;
+    background-color: black;
+    color: white;
+}
+
+nav .container-fluid{
+    padding: 0 100px;
+}
+
+.conteudo{
+    margin: 50px 200px;
+    grid-area: contentPage;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 100px;
+}
+
+
+
+.title .title-text{
+    font-size: 30px;
+    font-family: 'cursive';
+}
+
+thead th, tbody td{
+    text-align: center;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+    color:red;
+}
+
+.btn-header{
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(16, 177, 16);
+    height: 30px;
+    width: 90px;
+    font-size: 12px;
+    
+}
+
+.actived-btn{
+    background-color: rgb(129, 104, 240);
+    color: white;
+}
+
+.btn-header:hover{
+    background-color: rgb(11, 117, 38);
+    transition: 0.5s;
+}
+
+.btn-show{
+    border-radius: 15px;
+    color: white;
+    background-color: #6562E7;
+    height: 30px;
+    width: 90px;
+    font-size: 12px;
+}
+
+.btn-show:hover{
+    background-color: rgb(22, 11, 117);
+    transition: 0.5s;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+button a:hover{
+    color: white;
+}
+
+.btn-edit{
+    border-radius: 15px;
+    color: white;
+    background-color: #EECE28;
+    height: 30px;
+    width: 90px;
+    font-size: 12px;
+}
+
+.btn-edit:hover{
+    background-color: rgb(139, 148, 11);
+    transition: 0.5s;
+
+}
+
+.delete-btn-modal{
+    border-radius: 15px;
+    color: white;
+    background-color: #FA284D;
+    height: 30px;
+    width: 90px;
+    font-size: 12px;
+
+}
+
+.delete-btn-modal:hover{
+    background-color: rgb(160, 25, 15);
+    transition: 0.5s;
+
+}
+
+.btn-desactive{
+    border-radius: 15px;
+    color: white;
+    background-color: #0C0B0B;
+    height: 30px;
+    width: 90px;
+    font-size: 12px;
+}
+
+.btn-desactive:hover{
+    background-color: rgb(41, 41, 48);
+    transition: 0.5s;
+
+}
+
+.btn-active{
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(16, 177, 16);
+    height: 30px;
+    width: 90px;
+    font-size: 12px;
+}
+
+.btn-active:hover{
+    background-color: rgb(11, 117, 11);
+    transition: 0.5s;
+
+}
+
+.branded-yellow{
+    display: flex;
+    justify-content: center;
+    background-color: #FAFD6F;
+    border-radius: 25px;
+    height: 25px;
+    cursor:default;
+}
+
+
+.branded-blue{
+    display: flex;
+    justify-content: center;
+    background-color: #6F8EFD;
+    border-radius: 25px;
+    height: 25px;
+    cursor:default;
+}
+
+.td-content{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    align-items: center;
+}
+
+.circle{
+    display: flex;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: black;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}
+
+.bg-green{
+    background-color: green;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+    font-weight: bold;
+    font-family: serif;
+}

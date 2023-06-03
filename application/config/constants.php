@@ -89,4 +89,5 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 defined('USER_ADMIN')      OR define('USER_ADMIN', 'admin');
 defined('USER_STUDENT')      OR define('USER_STUDENT', 'student');
 defined('USUARIOS')      OR define('USUARIOS', 'usuarios');
+defined('ROOT')      OR define('ROOT', 1);
 

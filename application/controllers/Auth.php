@@ -56,6 +56,7 @@ class Auth extends CI_Controller {
 				'logado' => TRUE,
 				'id' => $dadosLogin['id'],
 				'role' => $dadosLogin['role'],
+				'nome' => $dadosLogin['nome'],
 			);
 			
 			$this->unsetAttemptData();
