@@ -1,23 +1,35 @@
-# Sistema de aconselhamento de matrícula
 
-    A ideia foi fazer um sistema de aconselhamento de matrícula, visto que na UFAL, especificamente no meu
-    curso (Ciência da computação) muitos alunos são "jubilados", ou seja, não conseguem terminar o curso
-    no prazo estipulado.
-    O sistema de aconselhamento de matrícula tem por objetivo, dado o histórico do aluno, aconselhá-lo
-    de quais disciplinas ele deverá se  matricular, desde o período atual, para que termine o curso
-    no menor tempo possível (caso seja possível), com no máximo 8 (oito)disciplinas por período e
-    sem choques de horário, usando técnicas de computação evolucionária.
-    O projeto é formado pelos usuários do tipo: admin e aluno. O admin deverá ser o usuário capaz de
-    gerenciar as informações de cada curso, tais como número de períodos, informações das disciplinas
-    e seus respectivos horários, etc. Já o aluno será aquele que irá “consumir” o sistema.
+# Sistema de Aconselhamento de Matrícula
+
+Este projeto é um sistema de aconselhamento de matrícula desenvolvido para auxiliar os alunos do curso de Ciência da Computação da UFAL a planejar suas matrículas de forma eficiente, visando evitar o jubilamento e concluir o curso no menor tempo possível.
 
 ## Índice
 
+- [Objetivo](#Objetivo)
 - [Tecnologias utilizadas no sistema](#Tecnologias-utilizadas-no-sistema)
 - [Instruções de Instalação](#instruções-de-instalação)
 - [Elementos obrigatórios no sistema implementados](#Elementos-obrigatórios-no-sistema-implementados)
 - [Elementos que faltam para concluir o projeto](#Elementos-que-faltam-para-concluir-o-projeto)
 - [Impedimentos (para a conclusão do projeto até a data estipulada)](#Impedimentos-(para-a-conclusão-do-projeto-até-a-data-estipulada))
+
+## Objetivo
+
+O objetivo do sistema de aconselhamento de matrícula é fornecer recomendações personalizadas de disciplinas para os alunos com base em seu histórico acadêmico. Levando em consideração o período atual, o sistema aconselha quais disciplinas o aluno deve se matricular, respeitando as seguintes restrições:
+
+- Limite máximo de 8 disciplinas por período.
+- Evitar choques de horário entre as disciplinas recomendadas.
+
+O sistema é composto por dois tipos de usuários:
+
+1. **Admin**: O administrador tem acesso a funcionalidades de gerenciamento das informações do curso, tais como:
+
+   - Número de períodos do curso.
+   - Informações das disciplinas, como nome, código, carga horária, pré-requisitos e horários.
+
+2. **Aluno**: O aluno é o usuário principal do sistema e possui as seguintes funcionalidades:
+
+   - Visualização do histórico acadêmico.
+   - Recebimento de recomendações personalizadas de disciplinas para matrícula.
 
 ## Tecnologias utilizadas no sistema
 
