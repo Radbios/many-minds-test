@@ -71,4 +71,16 @@ class Usuario extends CI_Controller {
 		$dados = $_POST;
 		$this->Usuario->update($id, $tabela, $dados);
 	}
+
+	public function perfil(){
+
+		$this->sessionCheck();
+
+		$dados['titulo'] = "Lista - Usuários";
+
+		$this->load->view('layout/header', $dados);
+		$this->load->view('layout/navbar');
+		$this->load->view('profile');
+		$this->load->view('layout/footer');
+	}
 }

@@ -35,7 +35,7 @@
                         <?= $this->session->userdata('nome')?> <span class="nav-role" style="font-size:12px;">(<?= $this->session->userdata('role')?>) </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Perfil</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url('usuario/perfil')?>">Perfil</a></li>
                         <li><a class="dropdown-item" href="#">Configurações</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="<?= base_url('auth/logout')?>">Sair</a></li>
