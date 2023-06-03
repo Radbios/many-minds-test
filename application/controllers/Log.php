@@ -8,7 +8,6 @@ class Log extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Log_model', 'Log');
-		$this->load->model('Usuario_model', 'Usuario');
 	}
 
 
@@ -33,12 +32,13 @@ class Log extends CI_Controller {
 		$this->isAdmin();
 
 		$dados['logs'] = $this->Log->getAll('logs');
-		
-		for ($i=0; $i < count($dados['logs']); $i++) { 
-			$dados['logs'][$i]['user'] = $this->Log->user($dados['logs'][$i]['user_id']);
-			$dados['logs'][$i]['user'] = get_object_vars($dados['logs'][$i]['user'][0]);
+		if(!is_null($dados['logs'])){
+			for ($i=0; $i < count($dados['logs']); $i++) { 
+				$dados['logs'][$i]['user'] = $this->Log->user($dados['logs'][$i]['user_id']);
+				$dados['logs'][$i]['user'] = $dados['logs'][$i]['user'][0];
+			}
 		}
-		
+
 		$dados['titulo'] = "Logs";
 		
 		$this->load->view('layout/header', $dados);

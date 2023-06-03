@@ -62,6 +62,13 @@ class MY_Model extends CI_Model {
 	{
 		if (is_array($dados) && !is_null($id) && isset($tabela))
 		{
+			$data = array(
+				'user_id' => $this->session->userdata('id'),
+				'tipo' => 'INFO',
+				'descricao' => "edição de dados em '{$tabela}' no id '{$id}'"
+			);
+			$this->Log->message($data);
+
 			$this->db->where('id', $id);
 			return $this->db->update($tabela, $dados);
 		}
@@ -72,6 +79,12 @@ class MY_Model extends CI_Model {
 	{
 		if (!is_null($id) && isset($tabela))
 		{
+			$data = array(
+				'user_id' => $this->session->userdata('id'),
+				'tipo' => 'INFO',
+				'descricao' => "remoção de dados em '{$tabela}', id '{$id}' foi removido"
+			);
+			$this->Log->message($data);
 			$this->db->where('id', $id);
 			return $this->db->delete($tabela);
 		}

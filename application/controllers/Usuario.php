@@ -7,6 +7,7 @@ class Usuario extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Usuario_model', 'Usuario');
+		$this->load->model('Log_model', 'Log');
 	}
 
 

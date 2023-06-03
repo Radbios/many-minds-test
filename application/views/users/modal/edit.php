@@ -27,6 +27,10 @@
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="editemail" name="email">
                         </div>
+                        <div class="mb-3">
+                            <label for="curso" class="form-label">Curso</label>
+                            <input type="email" class="form-control" id="editcurso" name="curso">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>

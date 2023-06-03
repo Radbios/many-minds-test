@@ -53,7 +53,7 @@ $route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['ws/registros'] = 'WebService/registros';
+$route['ws/registros'] = 'WebService/consumirDados';
 $route['usuario/mudarStatus/(:user_id)/(:status)'] = 'usuario/mudarStatus/$l/$i';
 $route['usuario/pegarInfo/(:user_id)'] = 'usuario/pegarInfo/$l';
 $route['usuario/atualizarInfo/(:user_id)'] = 'usuario/atualizarInfo/$l';

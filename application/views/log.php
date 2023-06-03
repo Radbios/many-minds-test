@@ -14,15 +14,26 @@
             </tr>
             </thead>
             <tbody>
-            <?php foreach($logs as $log):?>
-            <tr id="<?= $log['id']?>">
-                <td scope="row"><?= $log['id']?></td>
-                <td scope="row"><?= $log['user']['nome'] ?></td>
-                <td scope="row"><?= $log['user']['role'] ?></td>
-                <td scope="row"><?= $log['tipo']?></td>
-                <td scope="row"><?= $log['descricao']?></td>
-                <td scope="row"><?= $log['date']?></td>
-            <?php endforeach; ?>
+                <?php if(!is_null($logs)):?>
+                    <?php foreach($logs as $log):?>
+                    <tr id="<?= $log['id']?>">
+                        <td scope="row"><?= $log['id']?></td>
+                        <td scope="row"><?= $log['user']->email ?></td>
+                        <td scope="row">
+                            <?php if($log['user']->role == USER_ADMIN):?>
+                                <div class="branded-blue">
+                            <?php else: ?>
+                                <div class="branded-yellow">
+                            <?php endif; ?>
+                                <?= $log['user']->role ?>
+                            </div>
+                        </td>
+                        
+                        <td scope="row"><?= $log['tipo']?></td>
+                        <td scope="row"><?= $log['descricao']?></td>
+                        <td scope="row"><?= $log['date']?></td>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
 </div>

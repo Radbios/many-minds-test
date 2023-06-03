@@ -26,6 +26,10 @@
                             <label for="email" class="form-label">Email</label>
                             <input disabled type="email" class="form-control" id="showemail" name="email">
                         </div>
+                        <div class="mb-3">
+                            <label for="curso" class="form-label">Curso</label>
+                            <input disabled type="email" class="form-control" id="showcurso" name="curso">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">sair</button>

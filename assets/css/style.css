@@ -177,6 +177,24 @@ button a:hover{
     cursor:default;
 }
 
+.branded-red{
+    display: flex;
+    justify-content: center;
+    background-color: #bd0e0e;
+    border-radius: 25px;
+    height: 25px;
+    cursor:default;
+}
+
+.branded-gray{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(163, 153, 153);
+    border-radius: 25px;
+    height: 25px;
+    cursor:default;
+}
+
 
 .branded-blue{
     display: flex;

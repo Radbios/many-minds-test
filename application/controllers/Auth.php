@@ -7,6 +7,8 @@ class Auth extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Usuario_model', 'Usuario');
+		$this->load->model('Log_model', 'Log');
+
 	}
 
 	public function checkAttempt($tentativasLogin){
@@ -52,6 +54,7 @@ class Auth extends CI_Controller {
 
 		if (!empty($dadosLogin))
 		{
+			
 			$dados = array(
 				'logado' => TRUE,
 				'id' => $dadosLogin['id'],
@@ -60,17 +63,34 @@ class Auth extends CI_Controller {
 			);
 			
 			$this->unsetAttemptData();
-
+			
 			$this->session->set_userdata($dados);
+			
+			$data = array(
+				'user_id' => $this->session->userdata('id'),
+				'tipo' => 'INFO',
+				'descricao' => "entrou"
+			);
+
+			$this->Log->message($data);
 			redirect('dashboard');
 		} else
 		{
+
+			$data = array(
+				'user_id' => $this->session->userdata('id'),
+				'tipo' => 'ERROR',
+				'descricao' => "erro na autenticação"
+			);
+			$this->Log->message($data);
+
 			$this->session->set_userdata('tentativas_login', $tentativasLogin + 1);
 
 			if ($tentativasLogin + 1 >= 3) {
-	
 				$TempoBloqueio = time() + 60;
 				$this->session->set_userdata('tempo_bloqueio', $TempoBloqueio);
+				
+				
 			}
 
 			$this->session->set_flashdata('error', 'Usuário ou senha inválidos!');
@@ -81,7 +101,17 @@ class Auth extends CI_Controller {
 
 	public function logout()
 	{
+		$data = array(
+			'user_id' => $this->session->userdata('id'),
+			'tipo' => 'INFO',
+			'descricao' => "saiu"
+		);
+		$this->Log->message($data);
+
+
 		$this->session->unset_userdata('logado');
+
+
 		/*$this->session->sess_destroy();*/
 		redirect('auth');
 	}
