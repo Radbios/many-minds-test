@@ -16,4 +16,10 @@ class Usuario_model extends MY_Model {
 		return FALSE;
 	}
 
+	public function logs(){
+		$sql = "SELECT * FROM usuarios INNER JOIN logs ON usuarios.id = logs.user_id WHERE usuarios.id = ? ";
+		$query = $this->db->query($sql, array($id));
+		return $result = $query->result();	
+	}
+
 }

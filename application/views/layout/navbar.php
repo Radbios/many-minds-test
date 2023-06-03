@@ -17,7 +17,7 @@
                             <a class="nav-link" href="<?= base_url('usuario')?>">Usuários</a>
                         </li>
                         <li class="nav-item log">
-                            <a class="nav-link" href="#">Log</a>
+                            <a class="nav-link" href="<?= base_url('log')?>">Log</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item log">

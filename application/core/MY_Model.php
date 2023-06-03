@@ -6,12 +6,20 @@ class MY_Model extends CI_Model {
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Log_model', 'Log');
+
 	}
 
 	public function create($tabela, $dados)
 	{
 		if (isset($tabela) && is_array($dados)) 
-		{
+		{	
+			$data = array(
+				'user_id' => $this->session->userdata('id'),
+				'tipo' => 'INFO',
+				'descricao' => "criação de dados em '{$tabela}'"
+			);
+			$this->Log->message($data);
 			return $this->db->insert($tabela, $dados);
 		}
 		return FALSE;
@@ -21,6 +29,7 @@ class MY_Model extends CI_Model {
 	public function getAll($tabela)
 	{
 		if (isset($tabela)) {
+			$this->db->order_by('id', 'DESC');
 			$query = $this->db->get($tabela);
 			if ($query->num_rows() > 0) {
 				return $query->result_array();
@@ -30,7 +39,6 @@ class MY_Model extends CI_Model {
 		}
 		return FALSE;
 	}
-
 	
 	
 	public function getById($id, $tabela)
