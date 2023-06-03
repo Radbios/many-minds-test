@@ -64,7 +64,7 @@ Siga o passo a passo abaixo para instalar e configurar o projeto:
 
 
 
-## Elementos Obrigatórios no Sistema Implementados
+## Elementos Obrigatórios Implementados no Sistema
 
 1. Sistema de login:
    1. O sistema suporta autenticação de usuários por nível (`admin` e `student`). Só poderá acessar o sistema se estiver autenticado.
