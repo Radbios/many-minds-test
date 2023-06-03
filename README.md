@@ -31,70 +31,91 @@ O sistema é composto por dois tipos de usuários:
    - Visualização do histórico acadêmico.
    - Recebimento de recomendações personalizadas de disciplinas para matrícula.
 
-## Tecnologias utilizadas no sistema
+## Tecnologias Utilizadas no Sistema
 
-1. PHP:
-    1.1. Code igniter 3
-2. CSS & HTML:
-    2.1. Bootstrap
-4. JS:
-    4.1. Jquery
-    4.2. Ajax
-4. Database:
-    5.1. mariaDB
+- PHP:
+  - CodeIgniter 3
+
+- CSS & HTML:
+  - Bootstrap
+
+- JS:
+  - jQuery
+  - Ajax
+
+- Banco de Dados:
+  - MariaDB
 
 ## Instruções de Instalação
 
-Passo a passo para a instalação e configuração do projeto. 
+Siga o passo a passo abaixo para instalar e configurar o projeto:
 
 1. Clone o repositório: `git clone https://github.com/Radbios/many-minds-test.git`
 2. Entre no diretório do projeto: `cd many-minds-test`
 3. Instale as dependências: `composer install`
-4. Configure o banco de dados: 
-    1. `hostname` => `seu_hostname`;
-    2. `username` => `seu_username`;
-    3. `password` => `seu_password`;
-    4. `database` => `seu_database`;
-5. Execute os scripts da diretório `sql` 
-    [OBSERVAÇÕES] - *Execute primeiro `db_codeigniter_usuarios.sql`, pois as outras tabelas dependem dela [Table-Relationship]*
+4. Configure o banco de dados:
+   - `hostname` => `seu_hostname`
+   - `username` => `seu_username`
+   - `password` => `seu_password`
+   - `database` => `seu_database`
+5. Execute os scripts do diretório `sql`:
+   **Observações:** Execute primeiro `db_codeigniter_usuarios.sql`, pois as outras tabelas dependem dela [Table-Relationship].
+6. Execute o projeto.
 
-6. Execute o projeto
 
-## Elementos obrigatórios no sistema implementados
+
+## Elementos Obrigatórios no Sistema Implementados
 
 1. Sistema de login:
-    1. O sistema suporta autenticação de usuários por nível (`admin` e `student`). Só poderar acessar o sistema se estiver autenticado;
-    2. Ambos os usuários (`admin`,`student`) tem suas próprias `skills` e `gates`.
-    3. Atualmente não há opção de registro de usuário, apenas o `admin` pode criar novos usuários;
-    4. [Desafio] Um mesmo endereço de IP tem 3 chances para autenticar, caso não contrário, seu IP será travado por 1min (60s).
+   1. O sistema suporta autenticação de usuários por nível (`admin` e `student`). Só poderá acessar o sistema se estiver autenticado.
+   2. Ambos os usuários (`admin`, `student`) têm suas próprias `skills` e `gates`.
+   3. Atualmente não há opção de registro de usuário, apenas o `admin` pode criar novos usuários.
+   4. [Desafio] Um mesmo endereço de IP tem 3 chances para autenticar, caso contrário, seu IP será travado por 1 min (60s).
+
 2. CRUD de usuários:
-    2.1. O usuário só pode ser excluído logicamente (`desativado`);
+   1. O usuário só pode ser excluído logicamente (`desativado`).
+
 3. [Opcional] Desenvolvimento de sistema e listagem de logs de alterações do sistema. Ações efetuadas pelos usuários serão registradas.
+
 4. [Desafio] Criar WS de retorno de registros do sistema, com as seguintes condições:
-    1. Deve ser retornado em formato JSON;
-    2. Criar método de autenticação para consumo do WS;
-    3. Funcionamento do WS pode ser definido pelo candidato:
-        1. O funcionamento escolhido foi retornar os registros de todos os usuários do sistema.
-            [OBSERVAÇÕES] - *APENAS O ADMIN PODE CONSUMIR ESTE SERVIÇO, NÃO FAZ SENTIDO UM USUÁRIO `STUDENT` TER ESSAS INFORMAÇÕES*
-    [OBSERVAÇÕES] - *A rota para consumir o serviço é `http://localhost/ws/registros`, passando os parametros de `email` e `senha` no body*
+   1. Deve ser retornado em formato JSON.
+   2. Criar método de autenticação para consumo do WS.
+   3. Funcionamento do WS pode ser definido pelo candidato.
+      - O funcionamento escolhido foi retornar os registros de todos os usuários do sistema.
+      **Observações:**
+      - APENAS O ADMIN PODE CONSUMIR ESTE SERVIÇO, NÃO FAZ SENTIDO UM USUÁRIO `STUDENT` TER ESSAS INFORMAÇÕES.
 
-## Elementos que faltam para concluir o projeto
+**Observações:**
+A rota para consumir o serviço é `http://localhost/ws/registros`, passando os parâmetros de `email` e `senha` no body.
 
-1. `ADMIN`:
-    1. CRUD de `cursos`;
-    2. CRUD de `disciplinas`;
-    3. Excluir/limpar `logs`;
-2. `STUDENT`:
-    1. CRUD do `histórico analítico`;
-    2. Script evolucionário para gerar o `aconselhamento`;
-    3. CRUD dos `aconselhamentos` .
-        [OBSERVAÇÕES] - *Cada usuário `student` só poderá ter até 5 registros de aconselhamento. Com o máximo de itens atingidos, o serviço ficará desabilitado para ele até que exluia um dos registros* 
-3. `ALL USERS`:
-    1 - `Perfil` do usuário;
-        [OBSERVAÇÕES] - *Incluindo edição dos dados*
-    2 - `Configurações` da conta;
-    3 - `Cadastro` de novos usuários;
-    4 - `Esqueceu a senha`;
+
+## Elementos que Faltam para Concluir o Projeto
+
+### ADMIN
+
+1. CRUD de `cursos`.
+2. CRUD de `disciplinas`.
+3. Excluir/limpar `logs`.
+
+### STUDENT
+
+1. CRUD do `histórico analítico`.
+2. Script evolucionário para gerar o `aconselhamento`.
+3. CRUD dos `aconselhamentos`.
+   
+   **Observações:**
+   - Cada usuário `student` só poderá ter até 5 registros de aconselhamento. Com o máximo de itens atingidos, o serviço ficará desabilitado para ele até que exclua um dos registros.
+
+### ALL USERS
+
+1. `Perfil` do usuário.
+
+   **Observações:**
+   - Incluindo edição dos dados.
+
+2. `Configurações` da conta.
+3. `Cadastro` de novos usuários.
+4. `Esqueceu a senha`.
 
 ## OBSERVAÇÕES FINAIS
 
