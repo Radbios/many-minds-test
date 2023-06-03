@@ -63,6 +63,7 @@ Passo a passo para a instalação e configuração do projeto.
     4.3. Funcionamento do WS pode ser definido pelo candidato:
         4.3.1. O funcionamento escolhido foi retornar os registros de todos os usuários do sistema.
             [OBSERVAÇÕES] - *APENAS O ADMIN PODE CONSUMIR ESTE SERVIÇO, NÃO FAZ SENTIDO UM USUÁRIO `STUDENT` TER ESSAS INFORMAÇÕES*
+    [OBSERVAÇÕES] - *A rota para consumir o serviço é `http://localhost/ws/registros`, passando os parametros de `email` e `senha` no body*
 
 ## Elementos que faltam para concluir o projeto
 
