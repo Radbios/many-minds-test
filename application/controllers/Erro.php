@@ -26,7 +26,7 @@ class Erro extends CI_Controller {
 		$data = array(
 			'user_id' => $this->session->userdata('id'),
 			'tipo' => 'ERROR',
-			'descricao' => "ip travado'"
+			'descricao' => "ip travado"
 		);
 		$this->Log->message($data);
 

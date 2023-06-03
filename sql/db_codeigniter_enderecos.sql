@@ -1,4 +1,3 @@
-
 DROP TABLE IF EXISTS `enderecos`;
 
 CREATE TABLE `enderecos` (
@@ -9,7 +8,7 @@ CREATE TABLE `enderecos` (
   `logradouro` varchar(256) DEFAULT NULL,
   `estado` varchar(256) DEFAULT NULL,
   `cep` varchar(256) DEFAULT NULL,
-  FOREIGN KEY (user_id) REFERENCES enderecos(id)
+  FOREIGN KEY (user_id) REFERENCES usuarios(id),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 

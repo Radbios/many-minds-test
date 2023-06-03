@@ -1,4 +1,3 @@
-
 DROP TABLE IF EXISTS `logs`;
 
 CREATE TABLE `logs` (
@@ -7,7 +6,7 @@ CREATE TABLE `logs` (
   `tipo` varchar(25) DEFAULT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES usuarios(id)
+  FOREIGN KEY (user_id) REFERENCES usuarios(id),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,14 +8,14 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="<?= base_url('assets/css/login.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/loginPage.css') ?>" rel="stylesheet">
   </head>
 
   <body>
     <div id="login-page">
         <form class="form-login" action="<?= base_url('auth/logar') ?>" method="post">
             <div id="logo-login">
-                <img src="<?= base_url('assets/img/login/logo-alagoas.png') ?>" alt="" width="20%">
+              <img src="<?=base_url()?>/assets/img/brasao-ufal.png" alt="" style="width:40px">
             </div>
             <div class="input-text-form">
                 <img src="<?= base_url('assets/img/login/person.svg') ?>" alt="">
@@ -31,10 +31,13 @@
                 <a href="">Esqueceu a senha?</a>
                 <button type="submit">Entrar</button>
             </div>
+            <div class="text-register ">
+              Não tem uma conta?
+            </div>
+            <button class= "btn-register" type="button">
+              Cadastrar
+            </button>
         </form>
     </div>
-
-    <script src="<?= base_url('assets/js/') ?>"></script>
-
   </body>
 </html>
