@@ -1,8 +1,15 @@
 # Sistema de aconselhamento de matrícula
 
-    A ideia foi fazer um sistema de aconselhamento de matrícula, visto que na UFAL, especificamente no meu curso (Ciência da computação) muitos alunos são "jubilados", ou seja, não conseguem terminar o curso no prazo estipulado.
-    O sistema de aconselhamento de matrícula tem por objetivo, dado o histórico do aluno, aconselhá-lo de quais disciplinas ele deverá se  matricular, desde o período atual, para que termine o curso no menor tempo possível (caso seja possível), com no máximo 8 (oito)disciplinas por período e sem choques de horário, usando técnicas de computação evolucionária.
-    O projeto é formado pelos usuários do tipo: admin e aluno. O admin deverá ser o usuário capaz de gerenciar as informações de cada curso, tais como número de períodos, informações das disciplinas e seus respectivos horários, etc. Já o aluno será aquele que irá “consumir” o sistema.
+    A ideia foi fazer um sistema de aconselhamento de matrícula, visto que na UFAL, especificamente no meu
+    curso (Ciência da computação) muitos alunos são "jubilados", ou seja, não conseguem terminar o curso
+    no prazo estipulado.
+    O sistema de aconselhamento de matrícula tem por objetivo, dado o histórico do aluno, aconselhá-lo
+    de quais disciplinas ele deverá se  matricular, desde o período atual, para que termine o curso
+    no menor tempo possível (caso seja possível), com no máximo 8 (oito)disciplinas por período e
+    sem choques de horário, usando técnicas de computação evolucionária.
+    O projeto é formado pelos usuários do tipo: admin e aluno. O admin deverá ser o usuário capaz de
+    gerenciar as informações de cada curso, tais como número de períodos, informações das disciplinas
+    e seus respectivos horários, etc. Já o aluno será aquele que irá “consumir” o sistema.
 
 ## Índice
 
