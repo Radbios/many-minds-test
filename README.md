@@ -38,10 +38,10 @@ Passo a passo para a instalação e configuração do projeto.
 2. Entre no diretório do projeto: `cd many-minds-test`
 3. Instale as dependências: `composer install`
 4. Configure o banco de dados: 
-    4.1. `hostname` => `seu_hostname`;
-    4.2. `username` => `seu_username`;
-    4.3. `password` => `seu_password`;
-    4.4. `database` => `seu_database`;
+    1. `hostname` => `seu_hostname`;
+    2. `username` => `seu_username`;
+    3. `password` => `seu_password`;
+    4. `database` => `seu_database`;
 5. Execute os scripts da diretório `sql` 
     [OBSERVAÇÕES] - *Execute primeiro `db_codeigniter_usuarios.sql`, pois as outras tabelas dependem dela [Table-Relationship]*
 
@@ -50,38 +50,38 @@ Passo a passo para a instalação e configuração do projeto.
 ## Elementos obrigatórios no sistema implementados
 
 1. Sistema de login:
-    1.1. O sistema suporta autenticação de usuários por nível (`admin` e `student`). Só poderar acessar o sistema se estiver autenticado;
-    1.2. Ambos os usuários (`admin`,`student`) tem suas próprias `skills` e `gates`.
-    1.3. Atualmente não há opção de registro de usuário, apenas o `admin` pode criar novos usuários;
-    1.4. [Desafio] Um mesmo endereço de IP tem 3 chances para autenticar, caso não contrário, seu IP será travado por 1min (60s).
+    1. O sistema suporta autenticação de usuários por nível (`admin` e `student`). Só poderar acessar o sistema se estiver autenticado;
+    2. Ambos os usuários (`admin`,`student`) tem suas próprias `skills` e `gates`.
+    3. Atualmente não há opção de registro de usuário, apenas o `admin` pode criar novos usuários;
+    4. [Desafio] Um mesmo endereço de IP tem 3 chances para autenticar, caso não contrário, seu IP será travado por 1min (60s).
 2. CRUD de usuários:
     2.1. O usuário só pode ser excluído logicamente (`desativado`);
 3. [Opcional] Desenvolvimento de sistema e listagem de logs de alterações do sistema. Ações efetuadas pelos usuários serão registradas.
 4. [Desafio] Criar WS de retorno de registros do sistema, com as seguintes condições:
-    4.1. Deve ser retornado em formato JSON;
-    4.2. Criar método de autenticação para consumo do WS;
-    4.3. Funcionamento do WS pode ser definido pelo candidato:
-        4.3.1. O funcionamento escolhido foi retornar os registros de todos os usuários do sistema.
+    1. Deve ser retornado em formato JSON;
+    2. Criar método de autenticação para consumo do WS;
+    3. Funcionamento do WS pode ser definido pelo candidato:
+        1. O funcionamento escolhido foi retornar os registros de todos os usuários do sistema.
             [OBSERVAÇÕES] - *APENAS O ADMIN PODE CONSUMIR ESTE SERVIÇO, NÃO FAZ SENTIDO UM USUÁRIO `STUDENT` TER ESSAS INFORMAÇÕES*
     [OBSERVAÇÕES] - *A rota para consumir o serviço é `http://localhost/ws/registros`, passando os parametros de `email` e `senha` no body*
 
 ## Elementos que faltam para concluir o projeto
 
 1. `ADMIN`:
-    1.1. CRUD de `cursos`;
-    1.2. CRUD de `disciplinas`;
-    1.3. Excluir/limpar `logs`;
+    1. CRUD de `cursos`;
+    2. CRUD de `disciplinas`;
+    3. Excluir/limpar `logs`;
 2. `STUDENT`:
-    2.1. CRUD do `histórico analítico`;
-    2.2. Script evolucionário para gerar o `aconselhamento`;
-    2.3. CRUD dos `aconselhamentos` .
+    1. CRUD do `histórico analítico`;
+    2. Script evolucionário para gerar o `aconselhamento`;
+    3. CRUD dos `aconselhamentos` .
         [OBSERVAÇÕES] - *Cada usuário `student` só poderá ter até 5 registros de aconselhamento. Com o máximo de itens atingidos, o serviço ficará desabilitado para ele até que exluia um dos registros* 
 3. `ALL USERS`:
-    3.1 - `Perfil` do usuário;
+    1 - `Perfil` do usuário;
         [OBSERVAÇÕES] - *Incluindo edição dos dados*
-    3.1 - `Configurações` da conta;
-    3.1 - `Cadastro` de novos usuários;
-    3.1 - `Esqueceu a senha`;
+    2 - `Configurações` da conta;
+    3 - `Cadastro` de novos usuários;
+    4 - `Esqueceu a senha`;
 
 ## OBSERVAÇÕES FINAIS
 
