@@ -77,6 +77,8 @@ html, body{
     width: 90px;
     font-size: 12px;
     cursor: pointer;
+    text-decoration: none;
+    list-style: none;
 
 }
 
@@ -89,4 +91,9 @@ html, body{
     font-size: 15px;
     font-weight: bold;
     font-family: serif;
+}
+
+select{
+    border-radius: 25px;
+    padding: 5px;
 }

@@ -39,6 +39,23 @@ class Auth extends CI_Controller {
 		$this->load->view('login', $dados);
 	}
 
+	public function registerPage()
+	{
+		$dados['titulo'] = "Registrar";
+
+		$this->load->view('register', $dados);
+	}
+
+	public function register(){
+		$dados = $_POST;
+		$dados['status'] = true;
+		$dados['role'] = 'student';
+		$dados['senha'] = md5($dados['senha']);
+		$tabela = "usuarios";
+		$this->Usuario->create($tabela, $dados);
+
+		redirect('auth');
+	}
 
 	public function logar()
 	{

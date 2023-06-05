@@ -49,6 +49,4 @@ class Endereco extends CI_Controller {
 		}
 		redirect('endereco');
 	}
-	
-	
 }
