@@ -32,10 +32,11 @@ class Log extends CI_Controller {
 		$this->isAdmin();
 
 		$dados['logs'] = $this->Log->getAll('logs');
+
 		if(!is_null($dados['logs'])){
 			for ($i=0; $i < count($dados['logs']); $i++) { 
-				$dados['logs'][$i]['user'] = $this->Log->user($dados['logs'][$i]['user_id']);
-				$dados['logs'][$i]['user'] = $dados['logs'][$i]['user'][0];
+				$dados['logs'][$i]->user = $this->Log->user($dados['logs'][$i]->user_id);
+				$dados['logs'][$i]->user = $dados['logs'][$i]->user[0];
 			}
 		}
 

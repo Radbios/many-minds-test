@@ -32,7 +32,7 @@ class MY_Model extends CI_Model {
 			$this->db->order_by('id', 'DESC');
 			$query = $this->db->get($tabela);
 			if ($query->num_rows() > 0) {
-				return $query->result_array();
+				return $query->result_object();
 			} else {
 				return NULL;
 			}
@@ -49,7 +49,7 @@ class MY_Model extends CI_Model {
 			$query = $this->db->get($tabela);
 			if ($query->num_rows() > 0) 
 			{
-				return $query->row_array();
+				return $query->row_object();
 			} else
 			{
 				return NULL;
