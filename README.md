@@ -74,6 +74,10 @@ Siga o passo a passo abaixo para instalar e configurar o projeto:
 
 2. CRUD de usuários:
    1. O usuário só pode ser excluído logicamente (`desativado`).
+   [Opcional] O colaborador pode ter quantos endereços desejar:
+      1. O endereço deve ser composto por uma série de informações
+         que podem ser determinadas pelo candidato (Como CEP,
+         cidade, estado, rua...)
 
 3. [Opcional] Desenvolvimento de sistema e listagem de logs de alterações do sistema. Ações efetuadas pelos usuários serão registradas.
 
@@ -114,9 +118,11 @@ A rota para consumir o serviço é `http://localhost/ws/registros`, passando os 
    - Incluindo edição dos dados.
 
 2. `Configurações` da conta.
-3. `Cadastro` de novos usuários.
-4. `Esqueceu a senha`.
+3. `Esqueceu a senha`.
+4. `Alterar (ou excluir) endereços`
 
 ## OBSERVAÇÕES FINAIS
 
-*Não foi possível concluir o projeto devido ao prazo de entrega. Além disso, o teste ocorreu em dias de atividades da universidade*
+1. *Não foi possível concluir o projeto devido ao prazo de entrega. Além disso, o teste ocorreu em dias de atividades da universidade*
+2. *Não foi feito a validação dos dados a fim de poupar tempo para desenvolver outras coisas*
+3. *Não foi feita a paginação nas tabelas (listagens de dados)*
