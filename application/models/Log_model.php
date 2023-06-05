@@ -2,12 +2,6 @@
 
 class Log_model extends MY_Model {
 
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->model('Usuario_model', 'Usuario');
-	}
-
 	public function message($dados){
 		if (is_array($dados)) 
 		{	

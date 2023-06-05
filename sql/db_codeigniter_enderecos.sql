@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS `enderecos`;
 CREATE TABLE `enderecos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
-  `bairro` int(12) DEFAULT NULL,
+  `bairro` varchar(256) DEFAULT NULL,
   `cidade` varchar(256) DEFAULT NULL,
   `logradouro` varchar(256) DEFAULT NULL,
   `estado` varchar(256) DEFAULT NULL,
