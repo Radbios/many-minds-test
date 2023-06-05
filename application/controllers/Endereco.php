@@ -22,7 +22,7 @@ class Endereco extends CI_Controller {
 
 		$this->sessionCheck();
 
-		$dados['enderecos'] = $this->Usuario->getALl(ENDERECOS);
+		$dados['enderecos'] = $this->Endereco->user($this->session->userdata('id'));
 
 		$dados['titulo'] = "Endereços do usuário";
 

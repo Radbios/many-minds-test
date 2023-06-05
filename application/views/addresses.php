@@ -20,14 +20,14 @@
             </thead>
             <tbody>
             <?php foreach($enderecos as $endereco):?>
-                <tr id="<?= $endereco['id']?>">
-                    <td scope="row"><?= $endereco['id']?></td>
-                    <td scope="row"><?= $endereco['user_id']?></td>
-                    <td scope="row"><?= $endereco['cep']?></td>
-                    <td scope="row"><?= $endereco['bairro']?></td>
-                    <td scope="row"><?= $endereco['logradouro']?></td>
-                    <td scope="row"><?= $endereco['cidade']?></td>
-                    <td scope="row"><?= $endereco['estado']?></td>
+                <tr id="<?= $endereco->id?>">
+                    <td scope="row"><?= $endereco->id?></td>
+                    <td scope="row"><?= $endereco->user_id?></td>
+                    <td scope="row"><?= $endereco->cep?></td>
+                    <td scope="row"><?= $endereco->bairro?></td>
+                    <td scope="row"><?= $endereco->logradouro?></td>
+                    <td scope="row"><?= $endereco->cidade?></td>
+                    <td scope="row"><?= $endereco->estado?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
