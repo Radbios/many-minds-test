@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    --sidebar-width: 75px;
+}
+html{
+    height: 100vh;
+}
+body{
+    display: grid;
+    grid-template-columns: var(--sidebar-width) calc(100% - var(--sidebar-width));
+    height: 100%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    background: linear-gradient(to bottom, rgb(4,4,50), rgb(0,0,0));
+}
