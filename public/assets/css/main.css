@@ -61,26 +61,6 @@ td{
     border-top: 1px solid white;
 }
 
-#table-col1{
-    width: 20%;
-}
-
-#table-col2{
-    width: 40%;
-}
-
-#table-col3{
-    width: 15%;
-}
-
-#table-col4{
-    width: 10%;
-}
-
-#table-actions{
-    width: 25%;
-}
-
 .link-btn-add{
     list-style: none;
     padding:10px;
@@ -117,6 +97,18 @@ td{
 
 .item-form input{
     width: 250px;
+    height: 30px;
+    background: linear-gradient(to bottom, rgb(4,4,50), rgb(0,0,0));
+    border: none;
+    padding-left: 20px;
+    color: white;
+    font-size: 15px;
+    border-bottom: 2px solid var(--neon-blue);
+    outline: none;
+}
+
+.item-form select{
+    width: 272px;
     height: 30px;
     background: linear-gradient(to bottom, rgb(4,4,50), rgb(0,0,0));
     border: none;

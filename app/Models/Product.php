@@ -18,4 +18,9 @@ class Product extends Model
     {
         return $this->status === 1;
     }
+
+    public function product_supplier()
+    {
+        return $this->hasMany(ProductSupplier::class, 'product_id');
+    }
 }

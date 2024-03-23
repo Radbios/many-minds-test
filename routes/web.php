@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductSupplierController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -38,8 +39,10 @@ Route::middleware("auth")->group(function(){
 
     Route::middleware("role:admin")->group(function(){
         Route::resource('product', ProductController::class);
+        Route::get('product/{product}/create_supplier', [ProductController::class, 'create_supplier'])->name("product.create_supplier");
+        Route::post('product/{product}/store_supplier', [ProductController::class, 'store_supplier'])->name("product.store_supplier");
+
         Route::resource('supplier', SupplierController::class);
+        Route::resource('product_supplier', ProductSupplierController::class);
     });
-
-
 });
