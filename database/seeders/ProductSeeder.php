@@ -14,15 +14,11 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         Product::create([
-            'code' => "ABNSK",
             'name' => 'Pipoca',
-            'value_un' => '2',
         ]);
 
         Product::create([
-            'code' => "ABNSK",
             'name' => 'Jujuba',
-            'value_un' => '0.1',
         ]);
     }
 }

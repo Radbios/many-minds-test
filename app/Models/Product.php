@@ -10,9 +10,12 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'code',
         'name',
-        'value_un',
         'status'
     ];
+
+    public function product_is_active()
+    {
+        return $this->status === 1;
+    }
 }
