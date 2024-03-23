@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    --sidebar-width: 75px;
+    --sidebar-width: 210px;
 }
 html{
     height: 100vh;
@@ -16,4 +16,5 @@ body{
     width: 100%;
     color: white;
     background: linear-gradient(to bottom, rgb(4,4,50), rgb(0,0,0));
+    padding: 20px;
 }
