@@ -16,6 +16,11 @@ class Order extends Model
         'shipping_date'
     ];
 
+    public function buyer()
+    {
+        return $this->hasMany(Cart::class, 'order_id')->first()->buyer();
+    }
+
     public function items()
     {
         return $this->hasMany(Cart::class, 'order_id');

@@ -10,33 +10,37 @@
     <title>MANYMINDS - Registrar</title>
 </head>
 <body>
-    <div class="login-form">
-        <div class="title-text">
-            <p>manyminds</p>
-            <p>formulário de registro</p>
+    <form action="{{route("create.user")}}" method="POST">
+        @csrf
+        @method('post')
+        <div class="login-form">
+            <div class="title-text">
+                <p>manyminds</p>
+                <p>formulário de registro</p>
+            </div>
+            <div class="inputs">
+                <div class="input-field">
+                    <input type="text" name="name" id="name" placeholder="Nome" required>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" id="password" placeholder="Senha" required>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmar senha" required>
+                </div>
+            </div>
+            <div class="actions">
+                <button type="submit">
+                    Registrar
+                </button>
+                <a href="{{route("login")}}">
+                    Voltar
+                </a>
+            </div>
         </div>
-        <div class="inputs">
-            <div class="input-field">
-                <input type="text" name="name" id="name" placeholder="Nome" required>
-            </div>
-            <div class="input-field">
-                <input type="text" name="email" id="email" placeholder="Email" required>
-            </div>
-            <div class="input-field">
-                <input type="password" name="password" id="password" placeholder="Senha" required>
-            </div>
-            <div class="input-field">
-                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmar senha" required>
-            </div>
-        </div>
-        <div class="actions">
-            <a>
-                Registrar
-            </a>
-            <a href="{{route("login")}}">
-                Voltar
-            </a>
-        </div>
-    </div>
+    </form>
 </body>
 </html>

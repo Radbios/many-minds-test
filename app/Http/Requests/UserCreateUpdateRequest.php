@@ -28,7 +28,6 @@ class UserCreateUpdateRequest extends FormRequest
             "name" => ["required"],
             "email" => ["email", "required"],
             "password" => ["required", "confirmed"],
-            "role_id" => ["required"]
         ];
 
         if($this->method() === 'PUT' || $this->method() === 'PATCH'){

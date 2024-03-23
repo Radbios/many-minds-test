@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserCreateUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -27,14 +28,20 @@ class AuthController extends Controller
         ])->onlyInput('email');
     }
 
-    public function register(Request $request)
+    public function register(UserCreateUpdateRequest $request)
     {
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role_id' => $request->role_id,
+            'role_id' => 2,
         ]);
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => 1], $request->remember)) {
+            $request->session()->regenerate();
+
+            return redirect()->route('dashboard');
+        }
 
         return redirect()->route("dashboard");
     }
