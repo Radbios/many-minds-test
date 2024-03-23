@@ -37,8 +37,10 @@ body{
 
 .actions-table{
     display: flex;
-    justify-content: flex-end;
     margin: 30px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
 }
 
 table{
@@ -192,4 +194,13 @@ td{
 form{
     display: flex;
     flex:1;
+}
+
+.btn-resource button{
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    cursor: inherit;
 }

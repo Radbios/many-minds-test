@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductSupplierController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -47,5 +50,10 @@ Route::middleware("auth")->group(function(){
         Route::post('supplier/{supplier}/store_product', [SupplierController::class, 'store_product'])->name("supplier.store_product");
 
         Route::resource('product_supplier', ProductSupplierController::class);
+
+        Route::resource('shop', ShopController::class);
+        Route::resource('cart', CartController::class);
+        Route::resource('order', OrderController::class);
+        Route::post('order/{order}/finish', [OrderController::class, 'finish_order'])->name("order.finish_order");
     });
 });
