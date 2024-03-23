@@ -22,13 +22,18 @@ class ProductSupplierStoreUpdateRequest extends FormRequest
      */
     public function rules(): array
     {
-
         $rules = [
-            'code' => ['required'],
+            'code' => ['required', 'unique:product_suppliers,code,except,id'],
             'value_un' => ['required', 'numeric'],
         ];
-
-        if($this->method() == 'POST') $rules['supplier_id'] = ['integer', 'required'];
+        if($this->method() == 'POST'){
+            if($this->has("product_id")){
+                $rules['product_id'] = ['integer', 'required'];
+            }
+            else{
+                $rules['supplier_id'] = ['integer', 'required'];
+            }
+        }
 
         return $rules;
     }

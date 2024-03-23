@@ -11,13 +11,7 @@ class Product extends Model
 
     protected $fillable = [
         'name',
-        'status'
     ];
-
-    public function product_is_active()
-    {
-        return $this->status === 1;
-    }
 
     public function product_supplier()
     {

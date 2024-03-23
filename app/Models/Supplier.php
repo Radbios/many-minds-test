@@ -13,4 +13,9 @@ class Supplier extends Model
         'name',
         'cnpj'
     ];
+
+    public function product_supplier()
+    {
+        return $this->hasMany(ProductSupplier::class, 'supplier_id');
+    }
 }

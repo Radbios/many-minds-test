@@ -18,7 +18,6 @@
         <tr>
             <th id="table-col1">Nome</th>
             <th id="table-col2">Qnt. de Fornecedores Ativos</th>
-            <th id="table-col3">Status</th>
             <th id="table-actions">Ações</th>
         </tr>
     </thead>
@@ -29,23 +28,9 @@
                 <td>{{$product->name}}</td>
                 <td>{{$product->product_supplier_count}}</td>
                 <td>
-                    @if ($product->status)
-                        <div class="status status-active">Ativo</div>
-                    @else
-                        <div class="status status-inative">Inativo</div>
-                    @endif
-                </td>
-                <td>
                     <div class="column-actions">
                         <a href="{{route("product.show", [$product->id])}}" class="btn-resource">Fornecedores</a>
                         <a href="{{route("product.edit", [$product->id])}}" class="btn-resource">Editar</a>
-                        <form action="{{route("product.destroy", [$product->id])}}" method="post">
-                            @method('delete')
-                            @csrf
-                            <button type="submit" class="btn-resource">
-                                Mudar status
-                            </button>
-                        </form>
                     </div>
                 </td>
             </tr>

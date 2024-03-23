@@ -12,8 +12,6 @@
             @csrf
             @method('PUT')
             <div class="group-input">
-                <input type="text" placeholder="Nome do fornecedor" value="{{$product_supplier->supplier->name}}" disabled>
-                <input type="text" placeholder="CNPJ do fornecedor" value="{{$product_supplier->supplier->cnpj}}" disabled>
                 <input type="text" name="code" id="code" placeholder="Código do produto" value="{{$product_supplier->code}}" required>
                 <input type="text" name="value_un" id="value_un" placeholder="Valor do produto" value="{{$product_supplier->value_un}}" required>
             </div>

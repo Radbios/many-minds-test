@@ -36,7 +36,7 @@ class ProductController extends Controller
     public function show($product_id)
     {
         $product = Product::findOrFail($product_id);
-        $suppliers_relationship = $product->product_supplier()->with("supplier")->paginate(10);
+        $suppliers_relationship = $product->product_supplier()->with("product")->paginate(10);
         return view("product.show", compact("product", 'suppliers_relationship'));
     }
 
@@ -44,7 +44,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($product_id);
         $suppliers = Supplier::all();
-        return view("product.supplier_create", compact("product", "suppliers"));
+        return view("product.product_supplier_create", compact("product", "suppliers"));
     }
 
     public function store_supplier(ProductSupplierStoreUpdateRequest $request, $product_id)
@@ -61,12 +61,6 @@ class ProductController extends Controller
     public function edit($product_id)
     {
         $product = Product::findOrFail($product_id);
-
-        // --- CRIAR UMA POLICY AQUI ---
-        if(!$product->product_is_active())
-        {
-            return redirect()->back()->with("error", "Produtos inativos não podem ser alterados.");
-        }
 
         return view("product.edit", compact('product'));
     }

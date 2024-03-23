@@ -18,7 +18,7 @@
         <tr>
             <th id="table-col1">Nome</th>
             <th id="table-col3">CNPJ</th>
-            <th id="table-col2">Qnt. de Produtos</th>
+            <th id="table-col2">Qnt. de Produtos Ativos</th>
             <th id="table-actions">Ações</th>
         </tr>
     </thead>
@@ -28,9 +28,10 @@
             <tr>
                 <td>{{$supplier->name}}</td>
                 <td>{{$supplier->cnpj}}</td>
-                <td>#</td>
+                <td>{{$supplier->product_supplier_count}}</td>
                 <td>
                     <div class="column-actions">
+                        <a href="{{route("supplier.show", [$supplier->id])}}" class="btn-resource">Produtos</a>
                         <a href="{{route("supplier.edit", [$supplier->id])}}" class="btn-resource">Editar</a>
                         <form action="{{route("supplier.destroy", [$supplier->id])}}" method="post">
                             @method('delete')

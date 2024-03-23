@@ -43,6 +43,9 @@ Route::middleware("auth")->group(function(){
         Route::post('product/{product}/store_supplier', [ProductController::class, 'store_supplier'])->name("product.store_supplier");
 
         Route::resource('supplier', SupplierController::class);
+        Route::get('supplier/{supplier}/create_product', [SupplierController::class, 'create_product'])->name("supplier.create_product");
+        Route::post('supplier/{supplier}/store_product', [SupplierController::class, 'store_product'])->name("supplier.store_product");
+
         Route::resource('product_supplier', ProductSupplierController::class);
     });
 });
