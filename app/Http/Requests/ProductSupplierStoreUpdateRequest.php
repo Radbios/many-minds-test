@@ -23,8 +23,8 @@ class ProductSupplierStoreUpdateRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
-            'code' => ['required', 'unique:product_suppliers,code,except,id'],
             'value_un' => ['required', 'numeric'],
+            'inventory' => ['required', 'integer']
         ];
         if($this->method() == 'POST'){
             if($this->has("product_id")){

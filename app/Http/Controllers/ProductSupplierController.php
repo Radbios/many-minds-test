@@ -29,10 +29,10 @@ class ProductSupplierController extends Controller
     public function update(ProductSupplierStoreUpdateRequest $request, $product_supplier_id)
     {
         $product_supplier = ProductSupplier::with('product')->findOrFail($product_supplier_id);
-
         $product_supplier->update([
             'code' => $request->code,
             'value_un' => $request->value_un,
+            'inventory' => $request->inventory
         ]);
 
         return redirect()->route('product.show', [$product_supplier->product->id])->with("success", "Produto editado com sucesso!");

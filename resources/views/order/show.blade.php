@@ -39,11 +39,11 @@
                 <td>
                     <div class="column-actions">
                         @if ($order->status)
-                            <form action="{{route("cart.destroy", [$item->id])}}" method="post">
+                            <form action="{{route("cart.remove_item_from_order", [$item->id])}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button class="btn-resource">
-                                    Retirar do carrinho
+                                    Retirar do pedido
                                 </button>
                             </form>
                         @endif

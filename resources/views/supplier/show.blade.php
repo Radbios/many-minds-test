@@ -19,6 +19,7 @@
             <th id="table-col1">Nome</th>
             <th id="table-col3">Código do produto</th>
             <th id="table-col4">Valor Un.</th>
+            <th id="table-col4">Em estoque</th>
             <th id="table-col5">Status</th>
             <th id="table-actions">Ações</th>
         </tr>
@@ -30,6 +31,7 @@
                 <td>{{$supplier_relationship->product->name}}</td>
                 <td>{{$supplier_relationship->code}}</td>
                 <td>{{$supplier_relationship->value_un}}</td>
+                <td>{{$supplier_relationship->inventory}}</td>
                 <td>
                     @if ($supplier_relationship->status)
                         <div class="status status-active">Ativo</div>

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->foreignId('supplier_id')->constrained('suppliers')->onDelete('cascade');
             $table->string('code')->unique();
+            $table->integer('inventory')->default(0);
             $table->decimal('value_un', 8, 2, true);
             $table->boolean('status')->default(true);
             $table->timestamps();

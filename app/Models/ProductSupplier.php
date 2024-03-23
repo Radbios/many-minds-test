@@ -10,7 +10,9 @@ class ProductSupplier extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'code',
+        'inventory',
         'product_id',
         'supplier_id',
         'value_un',

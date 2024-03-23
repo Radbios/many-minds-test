@@ -54,6 +54,8 @@ Route::middleware("auth")->group(function(){
 
         Route::resource('shop', ShopController::class)->only('index', 'store');
         Route::resource('cart', CartController::class)->only('index', 'store', 'create', 'destroy');
+        Route::delete('cart/{order}/remove_item_from_order', [CartController::class, 'remove_item_from_order'])->name("cart.remove_item_from_order");
+
         Route::resource('order', OrderController::class)->only('index', 'show');
         Route::post('order/{order}/finish', [OrderController::class, 'finish_order'])->name("order.finish_order");
     });

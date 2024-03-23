@@ -14,6 +14,8 @@
             <div class="group-input">
                 <input type="text" name="code" id="code" placeholder="Código do produto" value="{{$product_supplier->code}}" required>
                 <input type="text" name="value_un" id="value_un" placeholder="Valor do produto" value="{{$product_supplier->value_un}}" required>
+                <input type="number" name="inventory" id="inventory" placeholder="Quantidade do produto" value="{{$product_supplier->inventory}}" required>
+
             </div>
             <div class="btn-content">
                 <a href="{{url()->previous()}}" class="btn-resource">Voltar</a>

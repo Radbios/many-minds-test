@@ -20,7 +20,8 @@
             <th id="table-col2">CNPJ</th>
             <th id="table-col3">Código do produto</th>
             <th id="table-col4">Valor Un.</th>
-            <th id="table-col5">Status</th>
+            <th id="table-col5">Em estoque</th>
+            <th id="table-col6">Status</th>
             <th id="table-actions">Ações</th>
         </tr>
     </thead>
@@ -32,6 +33,7 @@
                 <td>{{$supplier_relationship->supplier->cnpj}}</td>
                 <td>{{$supplier_relationship->code}}</td>
                 <td>{{$supplier_relationship->value_un}}</td>
+                <td>{{$supplier_relationship->inventory}}</td>
                 <td>
                     @if ($supplier_relationship->status)
                         <div class="status status-active">Ativo</div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,6 +32,7 @@ class OrderController extends Controller
 
         return view('order.show', compact('order', 'items', 'total_price'));
     }
+
     public function finish_order($order_id)
     {
         $order = Order::findOrFail($order_id);

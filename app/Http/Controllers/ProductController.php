@@ -53,7 +53,8 @@ class ProductController extends Controller
         $product->product_supplier()->create([
             'supplier_id' => $request->supplier_id,
             'code' => $request->code,
-            'value_un' => $request->value_un
+            'value_un' => $request->value_un,
+            'inventory' => $request->inventory
         ]);
         return redirect()->route('product.show', [$product_id])->with("success", "Fornecedor adicionado com sucesso!");
     }

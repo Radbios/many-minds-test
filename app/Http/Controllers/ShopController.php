@@ -13,7 +13,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $items = ProductSupplier::where("status", 1)->paginate(20);
+        $items = ProductSupplier::where("status", 1)->where("inventory", '<>', 0)->paginate(20);
 
         return view("shop.index", compact("items"));
     }

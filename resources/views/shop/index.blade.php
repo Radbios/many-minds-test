@@ -17,7 +17,7 @@
                 @method('post')
                 <input type="hidden" name="product_supplier_id" value="{{$item->id}}">
                 <div class="title">
-                    9x - {{$item->product->name}}
+                    {{$item->inventory}}x - {{$item->product->name}}
                     <p class="supplier-name">CNPJ: {{$item->supplier->cnpj}}</p>
                 </div>
 
@@ -35,7 +35,7 @@
                     <div class="counter">
                         <button type="button" class="btn-lower" data-id="lower-{{$item->id}}">-</button>
                         <input type="text" class="quantity" name="quantity" id="quantity-{{$item->id}}" value="0" style="pointer-events: none;" readonly>
-                        <button type="button" class="btn-bigger" data-max="4" data-id="bigger-{{$item->id}}">+</button>
+                        <button type="button" class="btn-bigger" data-max="{{$item->inventory}}" data-id="bigger-{{$item->id}}">+</button>
                     </div>
                     <button type="submit">Adicionar</button>
                 </div>
