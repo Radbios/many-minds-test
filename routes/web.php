@@ -49,11 +49,12 @@ Route::middleware("auth")->group(function(){
         Route::get('supplier/{supplier}/create_product', [SupplierController::class, 'create_product'])->name("supplier.create_product");
         Route::post('supplier/{supplier}/store_product', [SupplierController::class, 'store_product'])->name("supplier.store_product");
 
-        Route::resource('product_supplier', ProductSupplierController::class);
+        Route::resource('product_supplier', ProductSupplierController::class)->except('I
+        index', 'store', 'show');
 
-        Route::resource('shop', ShopController::class);
-        Route::resource('cart', CartController::class);
-        Route::resource('order', OrderController::class);
+        Route::resource('shop', ShopController::class)->only('index', 'store');
+        Route::resource('cart', CartController::class)->only('index', 'store', 'create');
+        Route::resource('order', OrderController::class)->only('index', 'show');
         Route::post('order/{order}/finish', [OrderController::class, 'finish_order'])->name("order.finish_order");
     });
 });

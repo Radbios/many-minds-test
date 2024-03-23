@@ -76,6 +76,7 @@ class ProductController extends Controller
         return redirect()->route('product.index')->with("success", "Produto editado com sucesso!");
     }
 
+    // --- EXCLUIR LOGICAEMNTE ---
     public function destroy($product_id)
     {
         $product = Product::findOrFail($product_id);
