@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('finished_by')->constrained('users')->cascadeOnDelete();
+            $table->date('shipping_date')->nullable();
             $table->decimal('total_price', 8, 2, true);
             $table->boolean('status')->default(true);
             $table->timestamps();

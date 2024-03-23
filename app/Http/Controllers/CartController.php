@@ -36,7 +36,8 @@ class CartController extends Controller
             }
 
             $order = Order::create([
-                'total_price' => $total_price
+                'total_price' => $total_price,
+                'finished_by' => Auth::user()->id
             ]);
             $cart->map(function($item) use ($order){
                                 $item->update([

@@ -53,7 +53,7 @@ Route::middleware("auth")->group(function(){
         index', 'store', 'show');
 
         Route::resource('shop', ShopController::class)->only('index', 'store');
-        Route::resource('cart', CartController::class)->only('index', 'store', 'create');
+        Route::resource('cart', CartController::class)->only('index', 'store', 'create', 'destroy');
         Route::resource('order', OrderController::class)->only('index', 'show');
         Route::post('order/{order}/finish', [OrderController::class, 'finish_order'])->name("order.finish_order");
     });

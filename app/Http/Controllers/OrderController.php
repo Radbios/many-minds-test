@@ -35,7 +35,8 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($order_id);
         $order->update([
-            'status' => !$order->id
+            'status' => !$order->id,
+            'shipping_date' => now()
         ]);
 
         return redirect()->back()->with("success", "Pedido finalizado com sucesso!");

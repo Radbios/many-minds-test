@@ -11,11 +11,18 @@ class Order extends Model
 
     protected $fillable = [
         'status',
-        'total_price'
+        'total_price',
+        'finished_by',
+        'shipping_date'
     ];
 
     public function items()
     {
         return $this->hasMany(Cart::class, 'order_id');
+    }
+
+    public function finished_by_user()
+    {
+        return $this->belongsTo(User::class, 'finished_by');
     }
 }
