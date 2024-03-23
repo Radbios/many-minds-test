@@ -18,4 +18,14 @@ class OrderController extends Controller
             ]
         ]);
     }
+
+    public function finished_order()
+    {
+        $order = Order::withSum('items', 'quantity')->where("status", 0)->get();
+        return response()->json([
+            "data" => [
+                "order" => OrderResource::collection($order)
+            ]
+        ]);
+    }
 }
