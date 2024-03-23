@@ -10,7 +10,7 @@
         </li>
         <li class="item-nav {{request()->route()->getName() == "product.index" ? "active" : ""}}">
             <a href="{{route("product.index")}}">
-                <img src="{{asset("assets/icon/projects.svg")}}" alt="">
+                <img src="{{asset("assets/icon/product.svg")}}" alt="">
                 <div class="sidebar-text">
                     Produtos
                 </div>
@@ -18,7 +18,7 @@
         </li>
         <li class="item-nav">
             <a href="">
-                <img src="{{asset("assets/icon/projects.svg")}}" alt="">
+                <img src="{{asset("assets/icon/list.svg")}}" alt="">
                 <div class="sidebar-text">
                     Pedidos
                 </div>
@@ -28,7 +28,7 @@
     <ul id="botside">
         <li class="item-nav">
             <a href="">
-                <img src="{{asset("assets/icon/projects.svg")}}" alt="">
+                <img src="{{asset("assets/icon/users.svg")}}" alt="">
                 <div class="sidebar-text">
                     Usuários
                 </div>
