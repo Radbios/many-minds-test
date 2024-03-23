@@ -191,6 +191,12 @@ td{
     background-color: var(--color-green);
 }
 
+.group-input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 form{
     display: flex;
     flex:1;

@@ -16,6 +16,14 @@
                 </div>
             </a>
         </li>
+        <li class="item-nav {{request()->route()->getName() == "supplier.index" ? "active" : ""}}">
+            <a href="{{route("supplier.index")}}">
+                <img src="{{asset("assets/icon/suppliers.svg")}}" alt="">
+                <div class="sidebar-text">
+                    Fornecedores
+                </div>
+            </a>
+        </li>
         <li class="item-nav">
             <a href="">
                 <img src="{{asset("assets/icon/list.svg")}}" alt="">
