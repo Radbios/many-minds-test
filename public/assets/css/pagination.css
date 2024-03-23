@@ -1,0 +1,31 @@
+.page-navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.page-link{
+    padding-inline: 20px;
+    width: max-content;
+}
+
+.pagination .page-link.disabled{
+    border-radius: 15px;
+    cursor: default;
+}
+
+.page-link.disabled{
+    background-color: gray;
+}
+
+.page-item.active .page-link{
+    background-color: var(--hover-red);
+    border-radius: 15px;
+}

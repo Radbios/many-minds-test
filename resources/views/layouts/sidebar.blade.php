@@ -8,8 +8,8 @@
                 </div>
             </a>
         </li>
-        <li class="item-nav">
-            <a href="">
+        <li class="item-nav {{request()->route()->getName() == "product.index" ? "active" : ""}}">
+            <a href="{{route("product.index")}}">
                 <img src="{{asset("assets/icon/projects.svg")}}" alt="">
                 <div class="sidebar-text">
                     Produtos

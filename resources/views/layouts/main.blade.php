@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="{{asset("assets/css/main.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/sidebar.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/pagination.css")}}">
     @yield('styles')
 </head>
 <body>
@@ -18,7 +19,9 @@
     @include('layouts.sidebar')
 
     <div class="container">
-        @yield('content')
+        <div class="content">
+            @yield('content')
+        </div>
     </div>
 
 </body>
