@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Http\Requests\ProductSupplierStoreUpdateRequest;
+use App\Http\Services\LoggerService;
 use App\Models\Product;
+use App\Models\ProductSupplier;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,7 @@ class ProductController extends Controller
     {
         $products = Product::withCount(['product_supplier' => function($query){
             $query->where("status", 1);
-        }])->paginate(10);
+        }])->paginate(8);
         return view("product.index", compact('products'));
     }
 
@@ -26,9 +28,11 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        Product::create([
+        $product = Product::create([
             "name" => $request->name
         ]);
+
+        LoggerService::log('info', "PRODUCT CREATE", "Produto [" . $product->id . "] criado.");
 
         return redirect()->route('product.index')->with("success", "Produto criado com sucesso!");
     }
@@ -36,7 +40,7 @@ class ProductController extends Controller
     public function show($product_id)
     {
         $product = Product::findOrFail($product_id);
-        $suppliers_relationship = $product->product_supplier()->with("product")->paginate(10);
+        $suppliers_relationship = $product->product_supplier()->with("product")->paginate(8);
         return view("product.show", compact("product", 'suppliers_relationship'));
     }
 
@@ -56,6 +60,9 @@ class ProductController extends Controller
             'value_un' => $request->value_un,
             'inventory' => $request->inventory
         ]);
+
+        LoggerService::log('info', "PRODUCT_SUPPLIER CREATE", "Adição do produto [" . $product->id . "] ao fornecedor [" . $request->supplier_id . "] .");
+
         return redirect()->route('product.show', [$product_id])->with("success", "Fornecedor adicionado com sucesso!");
     }
 
@@ -74,17 +81,43 @@ class ProductController extends Controller
             'name' => $request->name
         ]);
 
+        LoggerService::log('info', "PRODUCT EDIT", "Produto [" . $product->id . "] editado.");
+
         return redirect()->route('product.index')->with("success", "Produto editado com sucesso!");
+    }
+
+    public function edit_supplier($product_supplier_id)
+    {
+        $product_supplier = ProductSupplier::with(['product', 'supplier'])->findOrFail($product_supplier_id);
+        // --- CRIAR UMA POLICY AQUI ---
+        if(!$product_supplier->product_is_active())
+        {
+            return redirect()->back()->with("error", "Produtos inativos não podem ser alterados.");
+        }
+
+        return view("product.product_supplier_edit", compact('product_supplier'));
+    }
+
+    public function update_supplier(ProductSupplierStoreUpdateRequest $request, $product_supplier_id)
+    {
+        $product_supplier = ProductSupplier::with('product')->findOrFail($product_supplier_id);
+        $product_supplier->update([
+            'value_un' => $request->value_un,
+            'inventory' => $request->inventory
+        ]);
+
+        LoggerService::log('info', "PRODUCT_SUPPLIER EDIT", "Edição do produto [" . $product_supplier->product_id . "] do fornecedor [" . $product_supplier->supplier_id . "] .");
+
+        return redirect()->route('product.show', [$product_supplier->product->id])->with("success", "Produto editado com sucesso!");
     }
 
     // --- EXCLUIR LOGICAEMNTE ---
     public function destroy($product_id)
     {
-        $product = Product::findOrFail($product_id);
+        $product = Product::findOrFail($product_id)->delete();
 
-        $product->update([
-            'status' => !$product->status,
-        ]);
-        return redirect()->route('product.index')->with("success", "Status do produto foi alterado com sucesso!");
+        LoggerService::log('info', "PRODUCT DELETE", "Produto [" . $product->id . "] deletado.");
+
+        return redirect()->route('product.index')->with("success", "Produto deletado com sucesso!");
     }
 }

@@ -20,6 +20,7 @@
                 </select>
                 <input type="text" name="code" id="code" placeholder="Código do produto" required>
                 <input type="text" name="value_un" id="value_un" placeholder="Valor do produto" required>
+                <input type="number" name="inventory" id="inventory" placeholder="Quantidade do produto" required>
             </div>
             <div class="btn-content">
                 <a href="{{url()->previous()}}" class="btn-resource">Voltar</a>

@@ -41,7 +41,7 @@
                 </td>
                 <td>
                     <div class="column-actions">
-                        <a href="{{route("product_supplier.edit", [$supplier_relationship->id])}}" class="btn-resource">Editar</a>
+                        <a href="{{route("supplier.edit_product", [$supplier_relationship->id])}}" class="btn-resource">Editar</a>
                         <form action="{{route("product_supplier.destroy", [$supplier_relationship->id])}}" method="post">
                             @method('delete')
                             @csrf

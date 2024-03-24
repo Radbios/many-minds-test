@@ -50,22 +50,14 @@
         </li>
     </ul>
     <ul id="botside">
-        <li class="item-nav">
+        {{-- <li class="item-nav">
             <a href="">
                 <img src="{{asset("assets/icon/users.svg")}}" alt="">
                 <div class="sidebar-text">
                     Usuários
                 </div>
             </a>
-        </li>
-        <li class="item-nav">
-            <a href="">
-                <img src="{{asset("assets/icon/logs.svg")}}" alt="">
-                <div class="sidebar-text">
-                    Logs
-                </div>
-            </a>
-        </li>
+        </li> --}}
         <li class="item-nav">
             <form action="{{route("logout")}}" method="POST">
                 @csrf

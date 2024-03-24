@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\LoggerService;
 use App\Models\Cart;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -44,6 +45,8 @@ class OrderController extends Controller
             'status' => !$order->id,
             'shipping_date' => now()
         ]);
+
+        LoggerService::log('info', "ORDER FINISH", "Pedido [" . $order->id . "] finalizado.");
 
         return redirect()->back()->with("success", "Pedido finalizado com sucesso!");
     }

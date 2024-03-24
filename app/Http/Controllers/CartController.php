@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\LoggerService;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\ProductSupplier;
@@ -13,7 +14,7 @@ class CartController extends Controller
     public function index()
     {
         $cart = Cart::with('product_supplier.product')->where("user_id", Auth()->user()->id)
-                                                        ->where("order_id", null)->paginate(20);
+                                                        ->where("order_id", null)->paginate(8);
         $total_price = 0;
 
         foreach ($cart as $item) {
@@ -53,6 +54,8 @@ class CartController extends Controller
                                 ]);
                             });
 
+            LoggerService::log('info', "ORDER CREATE", "Pedido [" . $order->id . "] realizado com sucesso.");
+
             return redirect()->back()->with("sucess", "Pedido realizado com sucesso!");
         }
         return redirect()->back()->with("message", "Não há produtos no carrinho.");
@@ -64,6 +67,8 @@ class CartController extends Controller
         $cart = Cart::findOrFail($cart_id);
 
         $cart->delete();
+
+        LoggerService::log('info', "CART DELETE", "Item [" . $cart->id . "] retirado do carrinho.");
 
         return redirect()->back()->with("success", "Item retidado do carrinho");
     }
@@ -78,6 +83,7 @@ class CartController extends Controller
         ]);
 
         $cart->delete();
+        LoggerService::log('info', "ORDER REMOVE ITEM", "Item [" . $cart->id . "] retirado do pedido.");
 
         return redirect()->back()->with("success", "Item retidado do carrinho");
     }

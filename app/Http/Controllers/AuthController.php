@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserCreateUpdateRequest;
+use App\Http\Services\LoggerService;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -19,7 +20,6 @@ class AuthController extends Controller
         ]);
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => 1], $request->remember)) {
             $request->session()->regenerate();
-
             return redirect()->route('dashboard');
         }
 
@@ -36,6 +36,8 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'role_id' => 2,
         ]);
+
+        LoggerService::log('info', "USER CREATE" ,"Usuário " . "[" . $user->id . " - " . $user->role->name . "] registrado no sistema");
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => 1], $request->remember)) {
             $request->session()->regenerate();

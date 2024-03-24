@@ -45,13 +45,16 @@ Route::middleware("auth")->group(function(){
         Route::resource('product', ProductController::class);
         Route::get('product/{product}/create_supplier', [ProductController::class, 'create_supplier'])->name("product.create_supplier");
         Route::post('product/{product}/store_supplier', [ProductController::class, 'store_supplier'])->name("product.store_supplier");
+        Route::get('product/create_supplier/{product_supplier}', [ProductController::class, 'edit_supplier'])->name("product.edit_supplier");
+        Route::put('product/store_supplier/{product_supplier}', [ProductController::class, 'update_supplier'])->name("product.update_supplier");
 
         Route::resource('supplier', SupplierController::class);
         Route::get('supplier/{supplier}/create_product', [SupplierController::class, 'create_product'])->name("supplier.create_product");
         Route::post('supplier/{supplier}/store_product', [SupplierController::class, 'store_product'])->name("supplier.store_product");
+        Route::get('supplier/create_supplier/{product_supplier}', [SupplierController::class, 'edit_product'])->name("supplier.edit_product");
+        Route::put('supplier/store_supplier/{product_supplier}', [SupplierController::class, 'update_product'])->name("supplier.update_product");
 
-        Route::resource('product_supplier', ProductSupplierController::class)->except('I
-        index', 'store', 'show');
+        Route::resource('product_supplier', ProductSupplierController::class)->only('destroy');
 
         Route::post('order/{order}/finish', [OrderController::class, 'finish_order'])->name("order.finish_order");
     });
