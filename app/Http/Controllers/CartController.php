@@ -14,7 +14,7 @@ class CartController extends Controller
     public function index()
     {
         $cart = Cart::with('product_supplier.product')->where("user_id", Auth()->user()->id)
-                                                        ->where("order_id", null)->paginate(8);
+                                                        ->where("order_id", null)->orderBy('id', 'desc')->paginate(8);
         $total_price = 0;
 
         foreach ($cart as $item) {

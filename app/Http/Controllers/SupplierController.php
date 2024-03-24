@@ -16,7 +16,7 @@ class SupplierController extends Controller
     {
         $suppliers = Supplier::withCount(['product_supplier' => function($query){
             $query->where("status", 1);
-        }])->paginate(8);
+        }])->orderBy('id', 'desc')->paginate(8);
 
         return view("supplier.index", compact('suppliers'));
     }

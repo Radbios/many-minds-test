@@ -14,7 +14,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $items = ProductSupplier::where("status", 1)->where("inventory", '<>', 0)->paginate(15);
+        $items = ProductSupplier::where("status", 1)->where("inventory", '<>', 0)->orderBy('id', 'desc')->paginate(15);
 
         return view("shop.index", compact("items"));
     }

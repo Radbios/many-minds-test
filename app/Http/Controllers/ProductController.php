@@ -17,7 +17,7 @@ class ProductController extends Controller
     {
         $products = Product::withCount(['product_supplier' => function($query){
             $query->where("status", 1);
-        }])->paginate(8);
+        }])->orderBy('id', 'desc')->paginate(8);
         return view("product.index", compact('products'));
     }
 
