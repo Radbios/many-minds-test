@@ -31,7 +31,8 @@ Route::get('/register', function () {
     return redirect()->back();
 })->name("register");
 
-Route::post("/auth", [AuthController::class, "authenticate"])->name("auth");
+Route::post("/auth", [AuthController::class, "authenticate"])->name("auth")->middleware('block.ip');
+
 Route::post("/register", [AuthController::class, "register"])->name("create.user");
 
 Route::middleware("auth")->group(function(){

@@ -20,7 +20,7 @@
             </div>
             <div class="inputs">
                 <div class="input-field">
-                    <input type="text" name="email" id="email" placeholder="Email">
+                    <input type="text" name="email" id="email" placeholder="Email" value="{{old("email")}}">
                 </div>
                 <div class="input-field">
                     <input type="password" name="password" id="password" placeholder="Senha">

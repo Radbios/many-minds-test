@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])->middleware('block.ip');
 
 Route::middleware('auth:sanctum')->group(function(){
     Route::get("/order", [OrderController::class, 'index']);
