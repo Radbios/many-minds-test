@@ -37,7 +37,7 @@ class AuthController extends Controller
             'role_id' => 2,
         ]);
 
-        LoggerService::log('info', "USER CREATE" ,"Usuário " . "[" . $user->id . " - " . $user->role->name . "] registrado no sistema");
+        LoggerService::log('info', "USER CREATE" ,"Usuário " . "[" . $user->id . " - " . $user->role->name . "] registrado no sistema.");
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => 1], $request->remember)) {
             $request->session()->regenerate();

@@ -61,7 +61,7 @@ class ProductController extends Controller
             'inventory' => $request->inventory
         ]);
 
-        LoggerService::log('info', "PRODUCT_SUPPLIER CREATE", "Adição do produto [" . $product->id . "] ao fornecedor [" . $request->supplier_id . "] .");
+        LoggerService::log('info', "PRODUCT_SUPPLIER CREATE", "Adição do produto [" . $product->id . "] ao fornecedor [" . $request->supplier_id . "].");
 
         return redirect()->route('product.show', [$product_id])->with("success", "Fornecedor adicionado com sucesso!");
     }

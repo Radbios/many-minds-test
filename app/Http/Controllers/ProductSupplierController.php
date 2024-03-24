@@ -18,7 +18,7 @@ class ProductSupplierController extends Controller
             'status' => !$product_supplier->status,
         ]);
 
-        LoggerService::log('info', "PRODUCT_SUPPLIER CHANGE STATUS", "Mudança de status do produto [" . $product_supplier->product_id . "] do fornecedor [" . $product_supplier->supplier_id . "] .");
+        LoggerService::log('info', "PRODUCT_SUPPLIER CHANGE STATUS", "Mudança de status do produto [" . $product_supplier->product_id . "] do fornecedor [" . $product_supplier->supplier_id . "].");
 
         return redirect()->back()->with("success", "Status do produto foi alterado com sucesso!");
     }
