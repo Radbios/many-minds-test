@@ -24,10 +24,10 @@
             </div>
             <div class="inputs">
                 <div class="input-field">
-                    <input type="text" name="name" id="name" placeholder="Nome" required>
+                    <input type="text" name="name" id="name" placeholder="Nome" value="{{old("name")}}" required>
                 </div>
                 <div class="input-field">
-                    <input type="text" name="email" id="email" placeholder="Email" required>
+                    <input type="text" name="email" id="email" placeholder="Email"value="{{old("email")}}" required>
                 </div>
                 <div class="input-field">
                     <input type="password" name="password" id="password" placeholder="Senha" required>

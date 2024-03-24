@@ -12,8 +12,8 @@
             @csrf
             @method('post')
             <div class="group-input">
-                <input type="text" name="name" id="name" placeholder="Nome do Fornecedor" required>
-                <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ do Fornecedor" required>
+                <input type="text" name="name" id="name" placeholder="Nome do Fornecedor" value="{{old("name")}}" required>
+                <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ do Fornecedor" value="{{old("cnpj")}}" required>
             </div>
             <div class="btn-content">
                 <a href="{{url()->previous()}}" class="btn-resource">Voltar</a>
