@@ -23,7 +23,9 @@
             <th id="table-col3">Qnt.</th>
             <th id="table-col4">Valor uni. (R$)</th>
             <th id="table-col5">Valor total (R$)</th>
-            <th id="table-actions">Ações</th>
+            @can('isClient', auth()->user())
+                <th id="table-actions">Ações</th>
+            @endcan
         </tr>
     </thead>
 
@@ -35,20 +37,21 @@
                 <td>{{$item->quantity}}</td>
                 <td>{{$item->product_supplier->value_un}}</td>
                 <td>{{number_format($item->product_supplier->value_un * $item->quantity, 2, '.', '')}}</td>
-
-                <td>
-                    <div class="column-actions">
-                        @if ($order->status)
-                            <form action="{{route("cart.remove_item_from_order", [$item->id])}}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button class="btn-resource">
-                                    Retirar do pedido
-                                </button>
-                            </form>
-                        @endif
-                    </div>
-                </td>
+                @can('isClient', auth()->user())
+                    <td>
+                        <div class="column-actions">
+                            @if ($order->status)
+                                <form action="{{route("cart.remove_item_from_order", [$item->id])}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="btn-resource">
+                                        Retirar do pedido
+                                    </button>
+                                </form>
+                            @endif
+                        </div>
+                    </td>
+                @endcan
             </tr>
         @endforeach
     </tbody>

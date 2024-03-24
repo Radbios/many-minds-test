@@ -18,4 +18,9 @@ class RolePolicy
     {
         return $user->isAdmin();
     }
+
+    public function isClient(User $user)
+    {
+        return $user->isClient();
+    }
 }
