@@ -13,13 +13,13 @@ class OrderController extends Controller
     public function index()
     {
         if(Auth::user()->isAdmin()){
-            $orders = Order::with('items.product_supplier')->withSum('items', 'quantity')->paginate(15);
+            $orders = Order::with('items.product_supplier')->withSum('items', 'quantity')->paginate(8);
             return view("order.index", compact("orders"));
         }
 
         $orders = Order::with('items.product_supplier')->withSum('items', 'quantity')->whereHas('items', function($query) {
             $query->where('user_id', Auth::user()->id);
-        })->paginate(15);
+        })->paginate(8);
         return view("order.index", compact("orders"));
     }
 
@@ -27,7 +27,7 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($order_id);
 
-        $items = $order->items()->paginate(15);
+        $items = $order->items()->paginate(8);
 
         $total_price = 0;
 

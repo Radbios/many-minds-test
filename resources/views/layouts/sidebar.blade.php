@@ -8,22 +8,24 @@
                 </div>
             </a>
         </li>
-        <li class="item-nav {{request()->route()->getName() == "product.index" ? "active" : ""}}">
-            <a href="{{route("product.index")}}">
-                <img src="{{asset("assets/icon/product.svg")}}" alt="">
-                <div class="sidebar-text">
-                    Produtos
-                </div>
-            </a>
-        </li>
-        <li class="item-nav {{request()->route()->getName() == "supplier.index" ? "active" : ""}}">
-            <a href="{{route("supplier.index")}}">
-                <img src="{{asset("assets/icon/suppliers.svg")}}" alt="">
-                <div class="sidebar-text">
-                    Fornecedores
-                </div>
-            </a>
-        </li>
+        @can('isAdmin', auth()->user())
+            <li class="item-nav {{request()->route()->getName() == "product.index" ? "active" : ""}}">
+                <a href="{{route("product.index")}}">
+                    <img src="{{asset("assets/icon/product.svg")}}" alt="">
+                    <div class="sidebar-text">
+                        Produtos
+                    </div>
+                </a>
+            </li>
+            <li class="item-nav {{request()->route()->getName() == "supplier.index" ? "active" : ""}}">
+                <a href="{{route("supplier.index")}}">
+                    <img src="{{asset("assets/icon/suppliers.svg")}}" alt="">
+                    <div class="sidebar-text">
+                        Fornecedores
+                    </div>
+                </a>
+            </li>
+        @endcan
         <li class="item-nav {{request()->route()->getName() == "shop.index" ? "active" : ""}}">
             <a href="{{route("shop.index")}}">
                 <img src="{{asset("assets/icon/shop.svg")}}" alt="">

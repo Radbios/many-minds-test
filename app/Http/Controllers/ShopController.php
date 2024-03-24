@@ -21,14 +21,26 @@ class ShopController extends Controller
 
     public function store(ShopStoreRequest $request)
     {
-        $cart = Cart::create([
-            'user_id' => Auth::user()->id,
-            'product_supplier_id' => $request->product_supplier_id,
-            'quantity' => $request->quantity,
-        ]);
+        $cart = auth()->user()->cart()->where("product_supplier_id", $request->product_supplier_id)->first();
 
-        LoggerService::log('info', "CART CREATE", "Item [" . $cart->id . "] adicionado ao carrinho.");
+        if($cart)
+        {
+            $sum_quantity = $cart->quantity + $request->quantity;
+            $cart->update([
+                'quantity' => $sum_quantity > $cart->product_supplier->inventory ? $cart->product_supplier->inventory : $sum_quantity,
+            ]);
 
+            LoggerService::log('info', "CART CREATE", "Item [" . $cart->id . "] adicionado ao carrinho.");
+        }
+        else {
+            $cart = Cart::create([
+                'user_id' => Auth::user()->id,
+                'product_supplier_id' => $request->product_supplier_id,
+                'quantity' => $request->quantity,
+            ]);
+
+            LoggerService::log('info', "CART CREATE", "Item [" . $cart->id . "] adicionado ao carrinho.");
+        }
 
         return redirect()->back()->with("success", "Item adicionado no carrinho");
     }

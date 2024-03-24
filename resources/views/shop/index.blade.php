@@ -85,8 +85,7 @@
             const total_value = document.getElementById("value-" + product_id);
 
             input.value = parseInt(input.value) + 1;
-
-            if(input.value > max)
+            if(input.value > parseInt(max))
             {
                 input.value = max;
             }
