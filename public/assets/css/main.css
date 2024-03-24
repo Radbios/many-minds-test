@@ -199,3 +199,11 @@ form{
     color: inherit;
     cursor: inherit;
 }
+
+.number-value{
+    font-weight: bold;
+}
+
+.number-value span{
+    font-size: 20px;
+}

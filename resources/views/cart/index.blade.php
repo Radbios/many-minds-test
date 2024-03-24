@@ -11,7 +11,7 @@
 <h1 class="title-page">Lista de Produtos</h1>
 <div class="actions-table">
     <div class="number-value">
-        Valor total: R$ {{number_format($total_price, 2, '.', '')}}
+        Valor total: <span>R$ {{number_format($total_price, 2, '.', '')}}</span>
     </div>
     <form action="{{route('cart.store')}}" class="btn-resource" method="POST">
         @csrf
