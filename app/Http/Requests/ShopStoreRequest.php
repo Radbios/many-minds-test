@@ -28,4 +28,14 @@ class ShopStoreRequest extends FormRequest
 
         return $rules;
     }
+
+    public function messages()
+    {
+        return [
+            'product_supplier_id.required' => 'O campo "product_supplier_id" é obrigatório.',
+            'product_supplier_id.integer' => 'O campo "product_supplier_id" deve ser um inteiro.',
+            'quantity.integer' => 'A quantidade deve ser um inteiro.',
+            'quantity.min' => 'O número mínimo de itens é 1 (um).',
+        ];
+    }
 }

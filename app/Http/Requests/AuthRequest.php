@@ -28,4 +28,14 @@ class AuthRequest extends FormRequest
 
         return $rules;
     }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'O campo "email" é obrigatório.',
+            'email.email' => 'O campo "email" deve ser um email válido.',
+            'password.required' => 'O campo "senha" é obrigatório.',
+            // 'password.min' => 'O campo "senha" deve ter o mínimo de 8 caracteres.',
+        ];
+    }
 }

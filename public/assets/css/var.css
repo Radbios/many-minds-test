@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    --sidebar-width: 210px;
+    --color-red: rgb(110, 8, 8);
+    --color-green: rgb(8, 71, 32);
+    --neon-blue: rgb(81 81 235);
+    --dark-blue: rgb(4,4,50);
+    --color-blue: rgb(8, 8, 92);
+    --color-gray: rgb(197, 192, 192);
+    --color-white: rgb(255,255,255);
+}

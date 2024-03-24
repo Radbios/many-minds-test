@@ -30,7 +30,7 @@ ul li{
     transition: background 0.3s;
 }
 ul li:hover{
-    background-color: var(--hover-red);
+    background-color: var(--dark-blue);
 }
 ul li a{
     display: flex;
@@ -88,11 +88,11 @@ ul li form button{
 }
 
 .item-nav.active img{
-    box-shadow: 0 0 1px var(--color-red),
-                0 0 2px var(--color-red),
-                0 0 3px var(--color-red),
-                0 0 5px var(--color-red),
-                0 0 10px var(--color-red);
+    box-shadow: 0 0 1px var(--color-white),
+                0 0 2px var(--color-white),
+                0 0 3px var(--color-white),
+                0 0 5px var(--color-white),
+                0 0 10px var(--color-white);
 }
 li:hover .sidebar-text {
     text-shadow: 0 0 10px #fff,

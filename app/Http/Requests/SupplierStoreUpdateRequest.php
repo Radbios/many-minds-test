@@ -28,4 +28,12 @@ class SupplierStoreUpdateRequest extends FormRequest
 
         return $rules;
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'O campo "nome" é obrigatório.',
+            'cnpj.required' => 'O campo "CNPJ" é obrigatório.',
+        ];
+    }
 }

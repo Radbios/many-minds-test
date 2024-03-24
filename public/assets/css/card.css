@@ -1,0 +1,41 @@
+.card{
+    position: absolute;
+    right:24px;
+    bottom: 24px;
+    background-color: var(--neon-blue);
+    width: 400px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    animation: fadeOut 5s ease-in-out forwards;
+}
+
+.card-success{
+    background-color: var(--color-green);
+}
+
+.card-error{
+    background-color: var(--color-red);
+}
+.card-title{
+    margin-block: 10px 5px;
+    padding-inline: 15px;
+    font-weight: bold
+}
+
+.card-content{
+    padding-inline: 15px;
+    text-align: justify;
+    padding-bottom: 15px;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

@@ -39,4 +39,16 @@ class ProductSupplierStoreUpdateRequest extends FormRequest
 
         return $rules;
     }
+
+    public function messages()
+    {
+        return [
+            'value_un.required' => 'O campo "valor un." é obrigatório.',
+            'value_un.numeric' => 'O campo "valor un." deve ser um número válido.',
+            'inventory.required' => 'O campo "quantidade" é obrigatório.',
+            'inventory.integer' => 'O campo "quantidade" deve ser um número válido.',
+            'code.required' => 'O campo "código do produto" é obrigatório.',
+            'code.unique' => 'Este "código do produto" já existe.',
+        ];
+    }
 }

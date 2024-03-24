@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{asset("assets/css/var.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/login.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/card.css")}}">
     <link rel="icon" href="{{asset("assets/image/C.png")}}" type="image/x-icon">
 
     <title>MANYMINDS - Login</title>
 </head>
 <body>
+    @include('includes.flash-message')
     <form action="{{route("auth")}}" method="POST">
         @csrf
         @method("POST")
@@ -37,4 +40,6 @@
         </div>
     </form>
 </body>
+
+<script src="{{asset("assets/js/main.css")}}"></script>
 </html>
