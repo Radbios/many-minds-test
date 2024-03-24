@@ -29,8 +29,8 @@ ul li{
     border-radius: 15px;
     transition: background 0.3s;
 }
-ul li:hover{
-    background-color: var(--dark-blue);
+ul li.item-nav:hover{
+    background-color: var(--neon-blue);
 }
 ul li a{
     display: flex;
