@@ -27,11 +27,11 @@ class UserCreateUpdateRequest extends FormRequest
         $rules = [
             "name" => ["required"],
             "email" => ["email", "required"],
-            "password" => ["required", "confirmed"],
+            "password" => ["required", "confirmed", 'min:8'],
         ];
 
         if($this->method() === 'PUT' || $this->method() === 'PATCH'){
-            $rules['password'] = ['nullable', 'confirmed'];
+            $rules['password'] = ['nullable', 'confirmed', 'min:8'];
         }
         return $rules;
     }
