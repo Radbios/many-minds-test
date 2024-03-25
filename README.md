@@ -174,7 +174,9 @@ Descrição: requisições de modificação (criação, atualização e/ou exclu
 
 ##### 6.1 Login
 Alvo: ***todos***
+
 Endpoint: `[POST] - /api/login`
+
 > **Observação:** A **[Trava de IP]** também funciona neste recurso.
 
 ##### 6.2 Listar Todos os Pedidos
