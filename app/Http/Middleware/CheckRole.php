@@ -19,6 +19,10 @@ class CheckRole
         if ($role == 'admin' && auth()->user()->role->name != 'admin'){
             abort(403, 'Unauthorized action.');
         }
+
+        if ($role == 'client' && auth()->user()->role->name != 'client'){
+            abort(403, 'Unauthorized action.');
+        }
         return $next($request);
     }
 }

@@ -116,6 +116,10 @@ td{
     outline: none;
 }
 
+.item-form select option{
+    color: var(--dark-blue);
+}
+
 .item-form input:focus{
     box-shadow: none;
 }

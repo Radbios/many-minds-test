@@ -10,6 +10,7 @@ use App\Http\Resources\UserResource;
 use App\Jobs\SendMessageJob;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
@@ -25,6 +26,8 @@ class AuthController extends Controller
                 'email' => ['The provided credentials are incorrect.'],
             ]);
         }
+
+        if(Cache::has($request->ip())) Cache::forget($request->ip());
 
         return [
             'token' => $user->createToken("auth_token")->plainTextToken,

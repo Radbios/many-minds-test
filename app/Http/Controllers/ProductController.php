@@ -92,7 +92,7 @@ class ProductController extends Controller
         // --- CRIAR UMA POLICY AQUI ---
         if(!$product_supplier->product_is_active())
         {
-            return redirect()->back()->with("error", "Produtos inativos não podem ser alterados.");
+            return redirect()->back()->withErrors("Produtos inativos não podem ser alterados.");
         }
 
         return view("product.product_supplier_edit", compact('product_supplier'));

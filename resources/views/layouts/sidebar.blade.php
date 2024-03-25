@@ -26,22 +26,25 @@
                 </a>
             </li>
         @endcan
-        <li class="item-nav {{request()->route()->getName() == "shop.index" ? "active" : ""}}">
-            <a href="{{route("shop.index")}}">
-                <img src="{{asset("assets/icon/shop.svg")}}" alt="">
-                <div class="sidebar-text">
-                    Loja
-                </div>
-            </a>
-        </li>
-        <li class="item-nav  {{request()->route()->getName() == "cart.index" ? "active" : ""}}">
-            <a href="{{route("cart.index")}}">
-                <img src="{{asset("assets/icon/cart.svg")}}" alt="">
-                <div class="sidebar-text">
-                    Carrinho
-                </div>
-            </a>
-        </li>
+
+        @can('isClient', auth()->user())
+            <li class="item-nav {{request()->route()->getName() == "shop.index" ? "active" : ""}}">
+                <a href="{{route("shop.index")}}">
+                    <img src="{{asset("assets/icon/shop.svg")}}" alt="">
+                    <div class="sidebar-text">
+                        Loja
+                    </div>
+                </a>
+            </li>
+            <li class="item-nav  {{request()->route()->getName() == "cart.index" ? "active" : ""}}">
+                <a href="{{route("cart.index")}}">
+                    <img src="{{asset("assets/icon/cart.svg")}}" alt="">
+                    <div class="sidebar-text">
+                        Carrinho
+                    </div>
+                </a>
+            </li>
+        @endcan
         <li class="item-nav  {{request()->route()->getName() == "order.index" ? "active" : ""}}">
             <a href="{{route("order.index")}}">
                 <img src="{{asset("assets/icon/list.svg")}}" alt="">

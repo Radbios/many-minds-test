@@ -19,6 +19,7 @@ class AuthController extends Controller
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => 1], $request->remember)) {
             $request->session()->regenerate();
+            if(Cache::has($request->ip())) Cache::forget($request->ip());
             return redirect()->route('dashboard');
         }
 

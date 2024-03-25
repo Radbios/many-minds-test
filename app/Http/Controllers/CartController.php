@@ -76,13 +76,18 @@ class CartController extends Controller
     public function remove_item_from_order($cart_id)
     {
         $cart = Cart::findOrFail($cart_id);
+        $order = $cart->order;
 
         $product_supplier = $cart->product_supplier;
         $product_supplier->update([
             'inventory' => $product_supplier->inventory + $cart->quantity
         ]);
 
+        $order->update([
+            "total_price" => $order->total_price - ($cart->quantity * $cart->product_supplier->value_un)
+        ]);
         $cart->delete();
+
         LoggerService::log('info', "ORDER REMOVE ITEM", "Item [" . $cart->id . "] retirado do pedido.");
 
         return redirect()->back()->with("success", "Item retidado do carrinho");
