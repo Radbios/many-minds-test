@@ -36,41 +36,165 @@ Inicio o servidor laravel
 ```
 php artisan serve
 ```
-> **Observação:** Por padrão, o servidor é executado na URL **[127.0.0.1:8000](http://127.0.0.1:8000)**.
-
-
-   
-## 🚀 Metas Atingidas
-1. Sistema de Autenticação
-   - Login
-   - Cadastro
-   - Trava de IP
-3. Cadastro de Produtos
-   - Listar
-   - Criar
-   - Editar
-   - Deletar
-5. Cadastro de Fornecedores
-   - Listar
-   - Criar
-   - Editar
-   - Deletar
-9. Sistema de Pedidos
-    - Listar Produtos Fornecidos para a Venda
-    - Carrinho de Compras
-    - Pedidos Realizados
-11. LOGS
-    - Listagem dos Logs de Modificação do Sistema
-13. Web Service (API)
-    - Autenticação
-    - Listar Todos os Pedidos
-    - Listar Pedidos Finalizados
+> **Observação:** Por padrão, o servidor é executado na URL **[localhost](http://127.0.0.1:8000)**.
 
 ## 💻 Usuários do sistema
-### Administrador
+O sistema tem dois tipos de usuários. A seguir será dado os dados de login para cada tipo.
+> **Observação:** os recursos que cada um pode usar será indicado nas **[Funcionalidades do Sistema](#-usu%C3%A1rios-do-sistema)**.
 
-### Cliente
+#### Administrador
+```
+email: admin@gmail.com
+senha: admin
+```
+#### Cliente
+```
+email: client@gmail.com
+senha: client
+```
+   
+## 🚀 Funcionalidades do Sistema
+
+### 1. Sistema de Autenticação
+
+#### Login
+Alvo: ***todos***
+
+#### Cadastro
+Alvo: ***todos***
+
+#### Trava de IP
+Alvo: ***todos***
+
+Descrição: Após 3 (três) tentativas de autenticação, o IP ficará impossibilitado de efetuar requisições de login durante 1 (um) minuto.
+
+### 2. Cadastro de Produtos
+
+#### Listar
+Alvo: ***admin***
+
+Descrição: o usuário poderá ver a lista de produtos do sistema.
+
+#### Criar
+Alvo: ***admin***
+
+Descrição: o usuário poderá criar produtos no sistema.
+#### Editar
+Alvo: ***admin***
+
+Descrição: o usuário poderá editar produtos do sistema.
+
+#### Deletar
+Alvo: ***admin***
+
+Descrição: o usuário poderá deletar produtos do sistema.
+
+### 3. Cadastro de Fornecedores
+
+#### Listar
+Alvo: ***admin***
+
+Descrição: o usuário poderá ver a lista fornecedores do sistema.
+
+#### Criar
+Alvo: ***admin***
+
+Descrição: o usuário poderá criar fornecedores no sistema.
+#### Editar
+Alvo: ***admin***
+
+Descrição: o usuário poderá editar fornecedores do sistema.
+
+#### Deletar
+Alvo: ***admin***
+
+Descrição: o usuário poderá deletar fornecedores do sistema.
+
+### 4. Cadastro Produtos & Fornecedores
+
+#### Listar
+Alvo: ***admin***
+
+Descrição: o usuário poderá ver a lista fornecedores de um produto. **O inverso também é válido**
+
+#### Criar
+Alvo: ***admin***
+
+Descrição: o usuário poderá vincular um produto existente ao fornecedor *(inclui definição do código, preço unitário e quantidade em estoque do produto para aquele fornecedor)*. **O inverso também é válido**
+#### Editar
+Alvo: ***admin***
+
+Descrição: o usuário poderá editar os produtos de um fornecedor *(preço unitário e quantidade em estoque)*.
+
+#### Deletar
+Alvo: ***admin***
+
+Descrição: o usuário poderá deletar logicamente *(mudar status [ativo, inativo])* do produto de um fornecedor.
+> **Observação:** A função **Editar Produto do Fornecedor** não funcionará se aquele produto estiver desabilitado.
+
+
+### 4. Sistema de Pedidos
+
+#### Listar Produtos Fornecidos para a Venda
+Alvo: ***todos***
+
+Descrição: o usuário poderá ver os produtos ativos com estoque de cada fornecedor.
+
+#### Comprar Produto
+Alvo: ***todos***
+
+Descrição: o usuário poderá comprar os produtos habilitados.
+#### Carrinho de Compras
+Alvo: ***todos***
+
+Descrição: o usuário poderá ver, retirar produtos e/ou finalizar a compra no carrinho.
+
+#### Pedidos Realizados
+Alvo: ***todos***
+
+Descrição: o usuário poderá ver os seus pedidos realizados.
+> **Observação:**
+> 
+> Enquanto o status do pedido estiver *ativo*, o usuário poderá remover itens do pedido.
+>
+> Se o usuário for um *admin*, ele poderá ver todos os pedidos.
+>
+> Se o usuário for um *admin*, ele poderá finalizar os pedidos.
+
+#### Finalizar Pedidos
+Alvo: ***admin***
+
+Descrição: o usuário poderá finalizar um pedido *ativo*.
+ 
+#### 5. LOGS
+##### Listagem dos Logs de Modificação do Sistema
+Descrição: requisições de modificação (criação, atualização e/ou exclusão de recursos) terão logs escritos.
+ 
+#### 6. Web Service (API)
+
+##### Login
+Alvo: ***todos***
+Endpoint: `[POST] - /api/login`
+> **Observação:** A **[Trava de IP]** também funciona neste recurso.
+
+##### Listar Todos os Pedidos
+Alvo: ***todos***
+
+Endpoint: `[GET] - /api/order`
+
+Retorno: Os seus pedidos realizados.
+> **Observação:** Se o usuário for um *admin*, ele poderá ver todos os pedidos.
+
+##### Listar Pedidos Finalizados
+Alvo: ***todos***
+
+Endpoint: `[GET] - /api/order/finished_order`
+
+Retorno: Os seus pedidos realizados que foram finalizados.
+> **Observação:** Se o usuário for um *admin*, ele poderá ver todos os pedidos finalizados.
+
 ## :computer: Tecnologias Utilizadas
+
 ### Back-end
 - **[Laravel](https://laravel.com/)**
 - **[PHP](https://www.php.net/)**
