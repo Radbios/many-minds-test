@@ -13,7 +13,7 @@ class OrderController extends Controller
     public function index()
     {
         if(Auth::user()->isAdmin()){
-            $orders = Order::with('items.product_supplier')->withSum('items', 'quantity')->orderBy('id', 'desc')->paginate(8);
+            $orders = Order::with('items.product_supplier')->withSum('items', 'quantity')->having('items_sum_quantity', '>', 0)->orderBy('id', 'desc')->paginate(8);
             return view("order.index", compact("orders"));
         }
 

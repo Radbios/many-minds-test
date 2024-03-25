@@ -21,7 +21,7 @@ class ShopController extends Controller
 
     public function store(ShopStoreRequest $request)
     {
-        $cart = auth()->user()->cart()->where("product_supplier_id", $request->product_supplier_id)->first();
+        $cart = auth()->user()->cart()->where("product_supplier_id", $request->product_supplier_id)->where('order_id', null)->first();
 
         if($cart)
         {
