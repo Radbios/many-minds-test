@@ -1,10 +1,10 @@
-# Teste - Many Minds
+# Teste Prático
 ## 📖 Como usar
 Siga estas etapas para começar a usar o projeto:
 #### 1. Clone o Projeto
 Para obter uma cópia do projeto em seu computador, execute o comando abaixo para clonar o repositório usando o Git:
 ```
-git clone https://github.com/Radbios/many-minds-test.git
+git clone https://github.com/Radbios/teste-pratico.git
 ```
 > **Observação:** Caso não tenha o **[Git](https://git-scm.com/)**, instale-o.
 
@@ -13,7 +13,7 @@ Vá para a pasta do projeto, faça uma cópia do arquivo `.env.example`, renomei
 
 Você pode usar o seguinte comando para fazer uma cópia do arquivo `.env.example`:
 ```
-cd many-minds-test
+cd teste-pratico
 cp .env.example .env
 ```
 Em seguida, abra o arquivo `.env` com um editor de texto e faça as configurações necessárias, como definir variáveis de ambiente, configurar credenciais de banco de dados, etc.
