@@ -57,99 +57,99 @@ senha: client
 
 ### 1. Sistema de Autenticação
 
-#### Login
+#### 1.1 Login
 Alvo: ***todos***
 
-#### Cadastro
+#### 1.2 Cadastro
 Alvo: ***todos***
 
-#### Trava de IP
+#### 1.3 Trava de IP
 Alvo: ***todos***
 
 Descrição: Após 3 (três) tentativas de autenticação, o IP ficará impossibilitado de efetuar requisições de login durante 1 (um) minuto.
 
 ### 2. Cadastro de Produtos
 
-#### Listar
+#### 2.1 Listar
 Alvo: ***admin***
 
 Descrição: o usuário poderá ver a lista de produtos do sistema.
 
-#### Criar
+#### 2.2 Criar
 Alvo: ***admin***
 
 Descrição: o usuário poderá criar produtos no sistema.
-#### Editar
+#### 2.3 Editar
 Alvo: ***admin***
 
 Descrição: o usuário poderá editar produtos do sistema.
 
-#### Deletar
+#### 2.4 Deletar
 Alvo: ***admin***
 
 Descrição: o usuário poderá deletar produtos do sistema.
 
 ### 3. Cadastro de Fornecedores
 
-#### Listar
+#### 3.1 Listar
 Alvo: ***admin***
 
 Descrição: o usuário poderá ver a lista fornecedores do sistema.
 
-#### Criar
+#### 3.2 Criar
 Alvo: ***admin***
 
 Descrição: o usuário poderá criar fornecedores no sistema.
-#### Editar
+#### 3.3 Editar
 Alvo: ***admin***
 
 Descrição: o usuário poderá editar fornecedores do sistema.
 
-#### Deletar
+#### 3.4 Deletar
 Alvo: ***admin***
 
 Descrição: o usuário poderá deletar fornecedores do sistema.
 
 ### 4. Cadastro Produtos & Fornecedores
 
-#### Listar
+#### 4.1 Listar
 Alvo: ***admin***
 
 Descrição: o usuário poderá ver a lista fornecedores de um produto. **O inverso também é válido**
 
-#### Criar
+#### 4.2 Criar
 Alvo: ***admin***
 
 Descrição: o usuário poderá vincular um produto existente ao fornecedor *(inclui definição do código, preço unitário e quantidade em estoque do produto para aquele fornecedor)*. **O inverso também é válido**
-#### Editar
+#### 4.3 Editar
 Alvo: ***admin***
 
 Descrição: o usuário poderá editar os produtos de um fornecedor *(preço unitário e quantidade em estoque)*.
 
-#### Deletar
+#### 4.4 Deletar
 Alvo: ***admin***
 
 Descrição: o usuário poderá deletar logicamente *(mudar status [ativo, inativo])* do produto de um fornecedor.
 > **Observação:** A função **Editar Produto do Fornecedor** não funcionará se aquele produto estiver desabilitado.
 
 
-### 4. Sistema de Pedidos
+### 5. Sistema de Pedidos
 
-#### Listar Produtos Fornecidos para a Venda
+#### 5.1 Listar Produtos Fornecidos para a Venda
 Alvo: ***todos***
 
 Descrição: o usuário poderá ver os produtos ativos com estoque de cada fornecedor.
 
-#### Comprar Produto
+#### 5.2 Comprar Produto
 Alvo: ***todos***
 
 Descrição: o usuário poderá comprar os produtos habilitados.
-#### Carrinho de Compras
+#### 5.3 Carrinho de Compras
 Alvo: ***todos***
 
 Descrição: o usuário poderá ver, retirar produtos e/ou finalizar a compra no carrinho.
 
-#### Pedidos Realizados
+#### 5.4 Pedidos Realizados
 Alvo: ***todos***
 
 Descrição: o usuário poderá ver os seus pedidos realizados.
@@ -161,7 +161,7 @@ Descrição: o usuário poderá ver os seus pedidos realizados.
 >
 > Se o usuário for um *admin*, ele poderá finalizar os pedidos.
 
-#### Finalizar Pedidos
+#### 5.5 Finalizar Pedidos
 Alvo: ***admin***
 
 Descrição: o usuário poderá finalizar um pedido *ativo*.
@@ -172,12 +172,12 @@ Descrição: requisições de modificação (criação, atualização e/ou exclu
  
 #### 6. Web Service (API)
 
-##### Login
+##### 6.1 Login
 Alvo: ***todos***
 Endpoint: `[POST] - /api/login`
 > **Observação:** A **[Trava de IP]** também funciona neste recurso.
 
-##### Listar Todos os Pedidos
+##### 6.2 Listar Todos os Pedidos
 Alvo: ***todos***
 
 Endpoint: `[GET] - /api/order`
@@ -185,7 +185,7 @@ Endpoint: `[GET] - /api/order`
 Retorno: Os seus pedidos realizados.
 > **Observação:** Se o usuário for um *admin*, ele poderá ver todos os pedidos.
 
-##### Listar Pedidos Finalizados
+##### 6.3 Listar Pedidos Finalizados
 Alvo: ***todos***
 
 Endpoint: `[GET] - /api/order/finished_order`
