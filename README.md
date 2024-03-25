@@ -169,7 +169,9 @@ Descrição: o usuário poderá finalizar um pedido *ativo*.
 #### 5. LOGS
 ##### Listagem dos Logs de Modificação do Sistema
 Descrição: requisições de modificação (criação, atualização e/ou exclusão de recursos) terão logs escritos.
- 
+
+> **Observação:** os logs ficarão em `storage/logs/manyminds.log`
+
 #### 6. Web Service (API)
 
 ##### 6.1 Login
