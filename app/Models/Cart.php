@@ -14,7 +14,6 @@ class Cart extends Model
         'user_id',
         'product_supplier_id',
         'quantity',
-        'status'
     ];
 
     public function product_supplier()
