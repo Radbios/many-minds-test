@@ -31,6 +31,13 @@
                     <div class="column-actions">
                         <a href="{{route("product.show", [$product->id])}}" class="btn-resource">Fornecedores</a>
                         <a href="{{route("product.edit", [$product->id])}}" class="btn-resource">Editar</a>
+                        <form action="{{route("product.destroy", [$product->id])}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn-resource">
+                                Deletar
+                            </button>
+                        </form>
                     </div>
                 </td>
             </tr>

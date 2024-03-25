@@ -114,7 +114,8 @@ class ProductController extends Controller
     // --- EXCLUIR LOGICAEMNTE ---
     public function destroy($product_id)
     {
-        $product = Product::findOrFail($product_id)->delete();
+        $product = Product::findOrFail($product_id);
+        $product->delete();
 
         LoggerService::log('info', "PRODUCT DELETE", "Produto [" . $product->id . "] deletado.");
 
