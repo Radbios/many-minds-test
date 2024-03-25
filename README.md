@@ -214,7 +214,7 @@ Retorno: Os seus pedidos realizados que foram finalizados.
 ## Considerações Finais
 <p style="text-align: justify;">
     Durante a execução do teste, algumas atividades planejadas não puderam ser concluídas devido a restrições de tempo.
-    Logo, é relevante mencionar que a interface e a usabilidade não foram abordadas detalhadamente devido tais limitações. Esses aspectos são importantes para garantir uma experiência de usuário otimizada e atraente, e sua análise poderia ter fornecido informações valiosas.
+    Logo, é relevante mencionar que a interface e a usabilidade não foram abordadas detalhadamente devido tais limitações. Esses aspectos são importantes para garantir uma experiência de usuário otimizada e atraente.
 </p>
 <p style="text-align: justify;">
     Entretanto a não conclusão dessas tarefas não comprometeu a integridade dos resultados.
