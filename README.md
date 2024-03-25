@@ -1,5 +1,5 @@
 # Teste - Many Minds
-## Como usar
+## 📖 Como usar
 Siga estas etapas para começar a usar o projeto:
 #### 1. Clone o Projeto
 Para obter uma cópia do projeto em seu computador, execute o comando abaixo para clonar o repositório usando o Git:
@@ -63,9 +63,13 @@ php artisan serve
     - Listagem dos Logs de Modificação do Sistema
 13. Web Service (API)
     - Autenticação
-    - Todos os Pedidos
-    - Pedidos Finalizados
+    - Listar Todos os Pedidos
+    - Listar Pedidos Finalizados
 
+## 💻 Usuários do sistema
+### Administrador
+
+### Cliente
 ## :computer: Tecnologias Utilizadas
 ### Back-end
 - **[Laravel](https://laravel.com/)**
